@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://manifoldfinance.com
+
+# Sitemaps
+Sitemap: https://manifoldfinance.com/sitemap.xml

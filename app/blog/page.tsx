@@ -9,6 +9,15 @@ interface BlogPost {
   category: string;
 }
 
+// Simulating an API call with a timeout
+async function fetchBlogPosts(): Promise<BlogPost[]> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(blogPosts);
+    }, 100); // 100ms timeout to simulate API call
+  });
+}
+
 const blogPosts: BlogPost[] = [
   {
     slug: "introducing-mev-protection",
@@ -52,13 +61,15 @@ function CategoryBadge({ category }: { category: string }) {
   );
 }
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const posts = await fetchBlogPosts();
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container max-w-4xl mx-auto px-4 py-24">
         <h1 className="text-4xl font-heading mb-8">Blog</h1>
         <div className="space-y-12">
-          {blogPosts.map((post) => (
+          {posts.map((post) => (
             <article key={post.slug} className="space-y-4">
               <div className="flex items-center gap-4">
                 <time className="text-sm text-muted-foreground">{post.date}</time>

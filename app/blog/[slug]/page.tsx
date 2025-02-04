@@ -9,6 +9,37 @@ interface BlogPost {
   category: string;
 }
 
+// Simulating an API call with a timeout
+async function fetchBlogPost(slug: string): Promise<BlogPost | null> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const post = blogPosts.find((post) => post.slug === slug);
+      resolve(post || null);
+    }, 100); // 100ms timeout to simulate API call
+  });
+}
+
+export async function generateStaticParams() {
+  // In a real application, you would fetch this data from an API or database
+  return blogPosts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const post = await fetchBlogPost(params.slug);
+
+  if (!post) {
+    return {
+      title: "Post Not Found",
+    };
+  }
+
+  return {
+    title: post.title,
+  };
+}
+
 const blogPosts: BlogPost[] = [
   {
     slug: "introducing-mev-protection",
@@ -136,8 +167,8 @@ function CategoryBadge({ category }: { category: string }) {
   );
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = blogPosts.find((post) => post.slug === params.slug);
+export default async function BlogPost({ params }: { params: { slug: string } }) {
+  const post = await fetchBlogPost(params.slug);
 
   if (!post) {
     notFound();
