@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
 export function APIEndpoint() {
   return (
@@ -20,5 +20,6 @@ export function APIEndpoint() {
         Get started with our SecureRPC API for reliable and secure blockchain interactions.
       </p>
     </div>
-  );
+  )
 }
+

@@ -1,4 +1,4 @@
-import { Shield } from "lucide-react";
+import { Shield } from "lucide-react"
 
 export function PrivacySection() {
   return (
@@ -8,10 +8,10 @@ export function PrivacySection() {
         <h3 className="text-xl font-semibold">Privacy and Security</h3>
       </div>
       <p className="text-gray-400">
-        At Manifold Finance, we prioritize the privacy and security of our users. Our infrastructure
-        is built with state-of-the-art encryption and security measures to ensure your data and
-        transactions remain protected.
+        At Manifold Finance, we prioritize the privacy and security of our users. Our infrastructure is built with
+        state-of-the-art encryption and security measures to ensure your data and transactions remain protected.
       </p>
     </div>
-  );
+  )
 }
+

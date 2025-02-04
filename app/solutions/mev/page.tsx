@@ -1,6 +1,6 @@
-import { BackgroundPaths } from "../../components/background-paths";
-import { FeatureSection } from "../../components/feature-section";
-import { DollarSign, Zap, Shield, LineChart } from "lucide-react";
+import { BackgroundPaths } from "../../components/background-paths"
+import { FeatureSection } from "../../components/feature-section"
+import { DollarSign, Zap, Shield, LineChart } from "lucide-react"
 
 export default function MevPage() {
   const mevFeatures = [
@@ -24,7 +24,7 @@ export default function MevPage() {
       title: "MEV Analytics",
       description: "Detailed analytics and reporting of MEV activities.",
     },
-  ];
+  ]
 
   return (
     <div className="min-h-screen bg-blackA12 text-white">
@@ -37,5 +37,6 @@ export default function MevPage() {
         {/* Rest of the content remains the same */}
       </main>
     </div>
-  );
+  )
 }
+

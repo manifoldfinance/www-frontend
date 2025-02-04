@@ -1,5 +1,5 @@
-import type React from "react";
-import { Zap, Shield, DollarSign, Server } from "lucide-react";
+import type React from "react"
+import { Zap, Shield, DollarSign } from "lucide-react"
 
 export function FeatureGrid() {
   return (
@@ -21,20 +21,16 @@ export function FeatureGrid() {
           description="Maximize MEV earnings with our advanced strategies and tools."
         />
         <FeatureCard
-          icon={<Server className="w-6 h-6" />}
-          title="Enterprise SecureRPC"
-          description="Stable and reliable blockchain interactions for your applications."
+          icon={<Shield className="w-6 h-6" />}
+          title="Relay+ Protect"
+          description="Advanced MEV protection and transaction privacy for Ethereum."
         />
       </div>
     </div>
-  );
+  )
 }
 
-function FeatureCard({
-  icon,
-  title,
-  description,
-}: { icon: React.ReactNode; title: string; description: string }) {
+function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
     <div className="p-8 rounded-lg bg-white/5 border border-white/10">
       <div className="w-12 h-12 rounded-lg bg-[#31C4B9]/10 flex items-center justify-center text-[#31C4B9] mb-4">
@@ -43,5 +39,6 @@ function FeatureCard({
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
       <p className="text-gray-400 text-sm">{description}</p>
     </div>
-  );
+  )
 }
+

@@ -10,8 +10,7 @@ export default function ApiReferencePage() {
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold">Authentication</h2>
           <p>
-            All API endpoints require authentication using your API key. Include your API key in the
-            request headers:
+            All API endpoints require authentication using your API key. Include your API key in the request headers:
           </p>
           <pre className="rounded-lg bg-muted p-4">
             <code>{`X-API-Key: your_api_key`}</code>
@@ -31,9 +30,7 @@ export default function ApiReferencePage() {
 
           <div className="rounded-lg border p-4">
             <h3 className="text-xl font-semibold">GET /status</h3>
-            <p className="text-muted-foreground mt-2">
-              Get the current status of the SecureRPC service.
-            </p>
+            <p className="text-muted-foreground mt-2">Get the current status of the SecureRPC service.</p>
             <pre className="rounded-lg bg-muted p-4 mt-4">
               <code>{`curl -X GET "https://api.manifoldfinance.com/v1/status" \\
   -H "X-API-Key: your_api_key"`}</code>
@@ -53,5 +50,6 @@ export default function ApiReferencePage() {
         </section>
       </div>
     </div>
-  );
+  )
 }
+

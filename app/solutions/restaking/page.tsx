@@ -1,6 +1,6 @@
-import { BackgroundPaths } from "../../components/background-paths";
-import { FeatureSection } from "../../components/feature-section";
-import { Shield, Lock, Repeat, BarChart3 } from "lucide-react";
+import { BackgroundPaths } from "../../components/background-paths"
+import { FeatureSection } from "../../components/feature-section"
+import { Shield, Lock, Repeat, BarChart3 } from "lucide-react"
 
 export default function RestakingPage() {
   const restakingFeatures = [
@@ -24,7 +24,7 @@ export default function RestakingPage() {
       title: "Yield Optimization",
       description: "Maximize returns through optimized restaking strategies.",
     },
-  ];
+  ]
 
   return (
     <div className="min-h-screen bg-blackA12 text-white">
@@ -58,5 +58,6 @@ export default function RestakingPage() {
         </div> */}
       </main>
     </div>
-  );
+  )
 }
+

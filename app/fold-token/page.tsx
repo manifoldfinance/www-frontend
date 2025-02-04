@@ -1,24 +1,20 @@
-import { BackgroundPaths } from "../components/background-paths";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { ExternalLink, FileText, ShieldCheck, Zap } from "lucide-react";
+import { BackgroundPaths } from "../components/background-paths"
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { ExternalLink, FileText, ShieldCheck, Zap } from "lucide-react"
 
 export default function FoldTokenPage() {
   return (
     <div className="min-h-screen bg-black text-white">
-      <BackgroundPaths
-        title="FOLD Token|"
-        subtitle="The ERC20 token powering Manifold Finance's ecosystem"
-      />
+      <BackgroundPaths title="FOLD Token|" subtitle="The ERC20 token powering Manifold Finance's ecosystem" />
       <main className="container mx-auto px-4 py-12">
         <section className="mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">What is FOLD?</h2>
           <p className="text-base sm:text-lg mb-4">
-            FOLD is the native ERC20 token of the Manifold Finance ecosystem. It serves multiple
-            purposes within our platform, including governance, staking, and accessing premium
-            features.
+            FOLD is the native ERC20 token of the Manifold Finance ecosystem. It serves multiple purposes within our
+            platform, including governance, staking, and accessing premium features.
           </p>
           <div className="flex flex-wrap gap-2">
             <Badge variant="secondary">ERC20</Badge>
@@ -79,8 +75,8 @@ export default function FoldTokenPage() {
         <section className="mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">Token Distribution</h2>
           <p className="text-base sm:text-lg mb-4">
-            The initial distribution of FOLD tokens is designed to ensure a fair launch and
-            sustainable growth of the Manifold Finance ecosystem:
+            The initial distribution of FOLD tokens is designed to ensure a fair launch and sustainable growth of the
+            Manifold Finance ecosystem:
           </p>
           <ul className="list-disc list-inside space-y-2 mb-4">
             <li>40% - Community Treasury</li>
@@ -90,17 +86,16 @@ export default function FoldTokenPage() {
             <li>5% - Ecosystem Development Fund</li>
           </ul>
           <p className="text-base sm:text-lg mb-4">
-            This distribution ensures that a significant portion of tokens is allocated to the
-            community and ecosystem growth, while also incentivizing long-term commitment from the
-            team and early supporters.
+            This distribution ensures that a significant portion of tokens is allocated to the community and ecosystem
+            growth, while also incentivizing long-term commitment from the team and early supporters.
           </p>
         </section>
 
         <section className="mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">Governance</h2>
           <p className="text-base sm:text-lg mb-4">
-            FOLD token holders have the power to participate in the governance of the Manifold
-            Finance protocol. This includes:
+            FOLD token holders have the power to participate in the governance of the Manifold Finance protocol. This
+            includes:
           </p>
           <ul className="list-disc list-inside space-y-2 mb-4">
             <li>Proposing and voting on protocol upgrades</li>
@@ -109,16 +104,16 @@ export default function FoldTokenPage() {
             <li>Allocating resources from the Community Treasury</li>
           </ul>
           <p className="text-base sm:text-lg">
-            The governance process is designed to be transparent and inclusive, ensuring that all
-            token holders have a voice in the future direction of Manifold Finance.
+            The governance process is designed to be transparent and inclusive, ensuring that all token holders have a
+            voice in the future direction of Manifold Finance.
           </p>
         </section>
 
         <section className="mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">Staking and Rewards</h2>
           <p className="text-base sm:text-lg mb-4">
-            FOLD token holders can stake their tokens to earn rewards and contribute to the security
-            of the Manifold Finance network. Staking benefits include:
+            FOLD token holders can stake their tokens to earn rewards and contribute to the security of the Manifold
+            Finance network. Staking benefits include:
           </p>
           <ul className="list-disc list-inside space-y-2 mb-4">
             <li>Earning passive income through staking rewards</li>
@@ -127,8 +122,7 @@ export default function FoldTokenPage() {
             <li>Participation in network security and validation</li>
           </ul>
           <p className="text-base sm:text-lg">
-            The staking mechanism is designed to encourage long-term holding and active
-            participation in the ecosystem.
+            The staking mechanism is designed to encourage long-term holding and active participation in the ecosystem.
           </p>
         </section>
 
@@ -139,9 +133,8 @@ export default function FoldTokenPage() {
             <span className="text-base sm:text-lg font-semibold">Audited and Secure</span>
           </div>
           <p className="text-base sm:text-lg mb-4">
-            The FOLD token smart contract has undergone rigorous security audits by leading
-            blockchain security firms to ensure the safety of our users' funds and the integrity of
-            the Manifold Finance ecosystem.
+            The FOLD token smart contract has undergone rigorous security audits by leading blockchain security firms to
+            ensure the safety of our users' funds and the integrity of the Manifold Finance ecosystem.
           </p>
           <Button asChild variant="outline">
             <Link href="/security" className="inline-flex items-center">
@@ -153,8 +146,8 @@ export default function FoldTokenPage() {
         <section>
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">Get FOLD</h2>
           <p className="text-base sm:text-lg mb-4">
-            FOLD tokens are available on several decentralized exchanges and can be earned through
-            participation in Manifold Finance's services.
+            FOLD tokens are available on several decentralized exchanges and can be earned through participation in
+            Manifold Finance's services.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button asChild variant="default">
@@ -167,5 +160,6 @@ export default function FoldTokenPage() {
         </section>
       </main>
     </div>
-  );
+  )
 }
+

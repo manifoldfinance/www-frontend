@@ -1,7 +1,7 @@
-import { DocsSidebar } from "@/app/components/docs-sidebar";
-import { Breadcrumb } from "@/app/components/breadcrumb";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import type React from "react"; // Added import for React
+import { DocsSidebar } from "@/app/components/docs-sidebar"
+import { Breadcrumb } from "@/app/components/breadcrumb"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import type React from "react" // Added import for React
 
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -21,5 +21,6 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
         </ScrollArea>
       </div>
     </div>
-  );
+  )
 }
+

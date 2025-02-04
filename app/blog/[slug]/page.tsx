@@ -1,12 +1,43 @@
-import { notFound } from "next/navigation";
-import { Badge } from "@/components/ui/badge";
+import { notFound } from "next/navigation"
+import { Badge } from "@/components/ui/badge"
 
 interface BlogPost {
-  slug: string;
-  title: string;
-  date: string;
-  content: string;
-  category: string;
+  slug: string
+  title: string
+  date: string
+  content: string
+  category: string
+}
+
+// Simulating an API call with a timeout
+async function fetchBlogPost(slug: string): Promise<BlogPost | null> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const post = blogPosts.find((post) => post.slug === slug)
+      resolve(post || null)
+    }, 100) // 100ms timeout to simulate API call
+  })
+}
+
+export async function generateStaticParams() {
+  // In a real application, you would fetch this data from an API or database
+  return blogPosts.map((post) => ({
+    slug: post.slug,
+  }))
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const post = await fetchBlogPost(params.slug)
+
+  if (!post) {
+    return {
+      title: "Post Not Found",
+    }
+  }
+
+  return {
+    title: post.title,
+  }
 }
 
 const blogPosts: BlogPost[] = [
@@ -118,7 +149,7 @@ const blogPosts: BlogPost[] = [
       <p>As the Ethereum ecosystem evolves, Manifold Finance remains committed to providing cutting-edge solutions that leverage the latest scaling technologies.</p>
     `,
   },
-];
+]
 
 function CategoryBadge({ category }: { category: string }) {
   return (
@@ -130,17 +161,18 @@ function CategoryBadge({ category }: { category: string }) {
           : category === "Tutorial"
             ? "bg-green-500/10 text-green-500 hover:bg-green-500/20"
             : "bg-purple-500/10 text-purple-500 hover:bg-purple-500/20"
-      }>
+      }
+    >
       {category}
     </Badge>
-  );
+  )
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = blogPosts.find((post) => post.slug === params.slug);
+export default async function BlogPost({ params }: { params: { slug: string } }) {
+  const post = await fetchBlogPost(params.slug)
 
   if (!post) {
-    notFound();
+    notFound()
   }
 
   return (
@@ -154,12 +186,10 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             </div>
             <h1 className="text-4xl font-heading">{post.title}</h1>
           </div>
-          <div
-            className="prose dark:prose-invert max-w-none"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+          <div className="prose dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
         </article>
       </div>
     </div>
-  );
+  )
 }
+

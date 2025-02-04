@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import Link from "next/link";
-import { Menu } from "lucide-react";
+import * as React from "react"
+import Link from "next/link"
+import { Menu } from "lucide-react"
 
-import { cn } from "@/lib/utils";
-import { Icons } from "@/components/icons";
+import { cn } from "@/lib/utils"
+import { Icons } from "@/components/icons"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,9 +14,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+} from "@/components/ui/navigation-menu"
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 const solutions: { title: string; href: string; description: string }[] = [
   {
@@ -34,7 +34,12 @@ const solutions: { title: string; href: string; description: string }[] = [
     href: "/solutions/avs-operations",
     description: "Streamline your Autonomous Validation System operations for enhanced efficiency.",
   },
-];
+  {
+    title: "Relay+ Protect",
+    href: "/solutions/relay-protect",
+    description: "Advanced MEV protection and transaction privacy for Ethereum.",
+  },
+]
 
 const products: { title: string; href: string; description: string }[] = [
   ...solutions,
@@ -48,7 +53,7 @@ const products: { title: string; href: string; description: string }[] = [
     href: "/fold-token",
     description: "Learn about our native ERC20 token powering the Manifold Finance ecosystem.",
   },
-];
+]
 
 export function MainNav() {
   return (
@@ -107,23 +112,19 @@ export function MainNav() {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/docs" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Documentation
-                </NavigationMenuLink>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Documentation</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/blog" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Blog
-                </NavigationMenuLink>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Blog</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
       </div>
     </>
-  );
+  )
 }
 
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
@@ -137,27 +138,23 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWit
               "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
               className,
             )}
-            {...props}>
+            {...props}
+          >
             <div className="text-sm font-medium leading-none">{title}</div>
             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
           </a>
         </NavigationMenuLink>
       </li>
-    );
+    )
   },
-);
-ListItem.displayName = "ListItem";
+)
+ListItem.displayName = "ListItem"
 
-function MobileNavItem({
-  title,
-  items,
-}: { title: string; items: { title: string; href: string }[] }) {
-  const [isOpen, setIsOpen] = React.useState(false);
+function MobileNavItem({ title, items }: { title: string; items: { title: string; href: string }[] }) {
+  const [isOpen, setIsOpen] = React.useState(false)
   return (
     <div>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between py-2 text-left">
+      <button onClick={() => setIsOpen(!isOpen)} className="flex w-full items-center justify-between py-2 text-left">
         {title}
         <Icons.chevronDown className={cn("h-4 w-4 transition-transform", isOpen && "rotate-180")} />
       </button>
@@ -171,5 +168,6 @@ function MobileNavItem({
         </div>
       )}
     </div>
-  );
+  )
 }
+
