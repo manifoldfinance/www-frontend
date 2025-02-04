@@ -19,24 +19,24 @@ import { Menu } from "lucide-react";
 
 const solutions: { title: string; href: string; description: string }[] = [
   {
-    title: "High-Performance Staking",
+    title: "High-Yield Staking",
     href: "/solutions/staking",
-    description: "Build and manage efficient staking solutions for maximum returns.",
+    description: "Maximum returns, natively.",
   },
   {
-    title: "Secure Restaking",
+    title: "AVS Restaking",
     href: "/solutions/restaking",
-    description: "Leverage restaking protocols while ensuring top-notch security.",
+    description: "AVS Operations",
   },
   {
-    title: "MEV Optimization",
+    title: "MEV Relay",
     href: "/solutions/mev",
-    description: "Maximize MEV earnings with our advanced strategies and tools.",
+    description: "Maximize MEV earnings as a Validator. Protect yourself as a user.",
   },
   {
     title: "Enterprise SecureRPC",
     href: "/solutions/securerpc",
-    description: "Stable and reliable blockchain interactions for your applications.",
+    description: "MEV Protection and RPC as a Service",
   },
 ];
 
@@ -49,12 +49,12 @@ const products: { title: string; href: string; description: string }[] = [
   {
     title: "SecureRPC",
     href: "/products/securerpc",
-    description: "Enterprise-grade RPC service for secure blockchain interactions.",
+    description: "MEV Protection as a Service",
   },
   {
     title: "XGA",
-    href: "/products/xga",
-    description: "Cross-chain Governance Aggregator for decentralized decision-making.",
+    href: "https://xga.com",
+    description: "Hello World Auction.",
   },
   {
     title: "mevETH",
@@ -90,20 +90,17 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWit
   ({ className, title, children, ...props }, ref) => {
     return (
       <li>
-        <NavigationMenuLink
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className,
-          )}
-          {...props}
-          onSelect={(event) => {
-            if (props.onSelect) {
-              props.onSelect(event as unknown as React.SyntheticEvent<HTMLAnchorElement, Event>);
-            }
-          }}>
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
+        <NavigationMenuLink asChild>
+          <a
+            ref={ref}
+            className={cn(
+              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+              className,
+            )}
+            {...props}>
+            <div className="text-sm font-medium leading-none">{title}</div>
+            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
+          </a>
         </NavigationMenuLink>
       </li>
     );
@@ -143,7 +140,7 @@ function MobileMenu() {
 
 export function Header() {
   return (
-    <header className="fixed top-0 w-full z-50 bg-black border-b border-border">
+    <header className="fixed top-0 w-full z-50 bg-background border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center">
@@ -164,17 +161,17 @@ export function Header() {
                           href="/solutions/staking">
                           <div>
                             <Image
-                              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ethereum2_Logo-G7XZRKQfQ3ujqhgs1ZKjTpoe3zVqab.png"
+                              src="/eth_frame.svg"
                               alt="Ethereum Logo"
                               width={38}
                               height={38}
                               className="mb-3"
                             />
                             <div className="text-lg font-medium text-foreground mb-2">
-                              High-Performance Staking
+                              High Yield Staking
                             </div>
                             <p className="text-sm text-muted-foreground">
-                              Build and manage efficient staking solutions for maximum returns.
+                              +4.5% Without any Restaking
                             </p>
                           </div>
                           <div className="text-sm font-medium text-primary mt-4">Learn more →</div>
