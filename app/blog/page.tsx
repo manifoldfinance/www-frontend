@@ -1,21 +1,21 @@
-import Link from "next/link"
-import { Badge } from "@/components/ui/badge"
+import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 
 interface BlogPost {
-  slug: string
-  title: string
-  date: string
-  excerpt: string
-  category: string
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  category: string;
 }
 
 // Simulating an API call with a timeout
 async function fetchBlogPosts(): Promise<BlogPost[]> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(blogPosts)
-    }, 100) // 100ms timeout to simulate API call
-  })
+      resolve(blogPosts);
+    }, 100); // 100ms timeout to simulate API call
+  });
 }
 
 const blogPosts: BlogPost[] = [
@@ -31,7 +31,8 @@ const blogPosts: BlogPost[] = [
     slug: "optimizing-defi-strategies",
     title: "Optimizing DeFi Strategies with Manifold Finance",
     date: "February 1, 2025",
-    excerpt: "Discover how to leverage Manifold Finance's tools to optimize your DeFi strategies and maximize returns.",
+    excerpt:
+      "Discover how to leverage Manifold Finance's tools to optimize your DeFi strategies and maximize returns.",
     category: "Tutorial",
   },
   {
@@ -42,7 +43,7 @@ const blogPosts: BlogPost[] = [
       "We share our thoughts on the future of Ethereum scaling solutions and how Manifold Finance is positioned to support the ecosystem.",
     category: "Industry Insights",
   },
-]
+];
 
 function CategoryBadge({ category }: { category: string }) {
   return (
@@ -54,15 +55,14 @@ function CategoryBadge({ category }: { category: string }) {
           : category === "Tutorial"
             ? "bg-green-500/10 text-green-500 hover:bg-green-500/20"
             : "bg-purple-500/10 text-purple-500 hover:bg-purple-500/20"
-      }
-    >
+      }>
       {category}
     </Badge>
-  )
+  );
 }
 
 export default async function BlogPage() {
-  const posts = await fetchBlogPosts()
+  const posts = await fetchBlogPosts();
 
   return (
     <div className="min-h-screen bg-background">
@@ -89,6 +89,5 @@ export default async function BlogPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

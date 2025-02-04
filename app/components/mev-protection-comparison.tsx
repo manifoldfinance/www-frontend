@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { ChevronDown, ChevronUp } from "lucide-react"
+import { useState } from "react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface ComparisonData {
-  feature: string
-  relayProtect: string
-  flashbotsMevShare: string
-  mevBlocker: string
+  feature: string;
+  relayProtect: string;
+  flashbotsMevShare: string;
+  mevBlocker: string;
 }
 
 const comparisonData: ComparisonData[] = [
@@ -21,7 +21,8 @@ const comparisonData: ComparisonData[] = [
   },
   {
     feature: "Transaction Privacy",
-    relayProtect: "Full privacy until validator commitment, zero information leakage during pending state",
+    relayProtect:
+      "Full privacy until validator commitment, zero information leakage during pending state",
     flashbotsMevShare: "Partial privacy with strategic information hints for market efficiency",
     mevBlocker: "Enhanced privacy with selective disclosure mechanisms",
   },
@@ -103,20 +104,24 @@ const comparisonData: ComparisonData[] = [
     flashbotsMevShare: "Complex upgrade path with multiple stakeholders",
     mevBlocker: "Moderate upgrade complexity with partial compatibility",
   },
-]
+];
 
 export function MEVProtectionComparison() {
-  const [expandedRows, setExpandedRows] = useState<number[]>([])
+  const [expandedRows, setExpandedRows] = useState<number[]>([]);
 
   const toggleRow = (index: number) => {
-    setExpandedRows((prev) => (prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]))
-  }
+    setExpandedRows((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index],
+    );
+  };
 
   return (
     <Card>
       <CardHeader>
         <CardTitle>MEV Protection Comparison</CardTitle>
-        <CardDescription>Compare Relay+ Protect with other MEV protection solutions</CardDescription>
+        <CardDescription>
+          Compare Relay+ Protect with other MEV protection solutions
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="overflow-x-auto">
@@ -134,9 +139,15 @@ export function MEVProtectionComparison() {
                 <tr key={index} className="border-t border-muted">
                   <td className="p-2 font-medium">{row.feature}</td>
                   <td className="p-2">
-                    <div className={`${expandedRows.includes(index) ? "" : "line-clamp-2"}`}>{row.relayProtect}</div>
+                    <div className={`${expandedRows.includes(index) ? "" : "line-clamp-2"}`}>
+                      {row.relayProtect}
+                    </div>
                     {row.relayProtect.length > 100 && (
-                      <Button variant="ghost" size="sm" onClick={() => toggleRow(index)} className="mt-1">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => toggleRow(index)}
+                        className="mt-1">
                         {expandedRows.includes(index) ? (
                           <>
                             <ChevronUp className="h-4 w-4 mr-1" />
@@ -157,7 +168,9 @@ export function MEVProtectionComparison() {
                     </div>
                   </td>
                   <td className="p-2">
-                    <div className={`${expandedRows.includes(index) ? "" : "line-clamp-2"}`}>{row.mevBlocker}</div>
+                    <div className={`${expandedRows.includes(index) ? "" : "line-clamp-2"}`}>
+                      {row.mevBlocker}
+                    </div>
                   </td>
                 </tr>
               ))}
@@ -166,6 +179,5 @@ export function MEVProtectionComparison() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
-

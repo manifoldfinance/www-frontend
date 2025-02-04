@@ -1,6 +1,6 @@
-import { BackgroundPaths } from "@/app/components/background-paths"
-import { FeatureSection } from "@/app/components/feature-section"
-import { Zap, TrendingUp, Shield, Coins } from "lucide-react"
+import { BackgroundPaths } from "@/app/components/background-paths";
+import { FeatureSection } from "@/app/components/feature-section";
+import { Zap, TrendingUp, Shield, Coins } from "lucide-react";
 
 const mevETHFeatures = [
   {
@@ -23,7 +23,7 @@ const mevETHFeatures = [
     title: "Liquid Staking",
     description: "Receive mevETH tokens while your ETH is staked.",
   },
-]
+];
 
 export default function MevETHPage() {
   return (
@@ -35,9 +35,9 @@ export default function MevETHPage() {
         <section className="mt-16">
           <h2 className="text-3xl font-bold mb-6">What is mevETH?</h2>
           <p className="text-lg mb-6">
-            mevETH is a revolutionary staking solution that optimizes your Ethereum staking rewards by capturing Miner
-            Extractable Value (MEV). By staking with mevETH, you can potentially earn higher returns compared to
-            traditional staking methods.
+            mevETH is a revolutionary staking solution that optimizes your Ethereum staking rewards
+            by capturing Miner Extractable Value (MEV). By staking with mevETH, you can potentially
+            earn higher returns compared to traditional staking methods.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-[#b8faf6] bg-opacity-20 p-6 rounded-lg">
@@ -62,6 +62,5 @@ export default function MevETHPage() {
         </section>
       </main>
     </div>
-  )
+  );
 }
-

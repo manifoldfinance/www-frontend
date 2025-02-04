@@ -1,13 +1,13 @@
-import type { LucideIcon } from "lucide-react"
+import type { LucideIcon } from "lucide-react";
 
 interface Feature {
-  icon: LucideIcon
-  title: string
-  description: string
+  icon: LucideIcon;
+  title: string;
+  description: string;
 }
 
 interface FeatureSectionProps {
-  features: Feature[]
+  features: Feature[];
 }
 
 export function FeatureSection({ features }: FeatureSectionProps) {
@@ -16,8 +16,7 @@ export function FeatureSection({ features }: FeatureSectionProps) {
       {features.map((feature, index) => (
         <div
           key={index}
-          className="relative p-6 rounded-lg border border-white/[0.08] bg-black/40 backdrop-blur-sm hover:border-white/[0.12] transition-colors"
-        >
+          className="relative p-6 rounded-lg border border-white/[0.08] bg-black/40 backdrop-blur-sm hover:border-white/[0.12] transition-colors">
           <div className="w-12 h-12 rounded-lg bg-[#31C4B9]/10 flex items-center justify-center mb-4">
             <feature.icon className="w-6 h-6 text-[#31C4B9]" />
           </div>
@@ -26,6 +25,5 @@ export function FeatureSection({ features }: FeatureSectionProps) {
         </div>
       ))}
     </div>
-  )
+  );
 }
-

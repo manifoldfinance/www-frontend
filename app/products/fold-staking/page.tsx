@@ -1,6 +1,6 @@
-import { BackgroundPaths } from "@/app/components/background-paths"
-import { FeatureSection } from "@/app/components/feature-section"
-import { Coins, Lock, BarChart, Zap } from "lucide-react"
+import { BackgroundPaths } from "@/app/components/background-paths";
+import { FeatureSection } from "@/app/components/feature-section";
+import { Coins, Lock, BarChart, Zap } from "lucide-react";
 
 const foldStakingFeatures = [
   {
@@ -23,20 +23,24 @@ const foldStakingFeatures = [
     title: "Quick Withdrawals",
     description: "Flexible withdrawal options with minimal waiting periods.",
   },
-]
+];
 
 export default function FoldStakingPage() {
   return (
     <div className="min-h-screen bg-[#1616b4] text-white">
-      <BackgroundPaths title="FOLD Staking|" subtitle="Maximize your returns by staking FOLD tokens" />
+      <BackgroundPaths
+        title="FOLD Staking|"
+        subtitle="Maximize your returns by staking FOLD tokens"
+      />
       <main className="container mx-auto px-4 py-12">
         <FeatureSection features={foldStakingFeatures} />
 
         <section className="mt-16">
           <h2 className="text-3xl font-bold mb-6">Why Stake FOLD?</h2>
           <p className="text-lg mb-6">
-            Staking FOLD tokens allows you to earn rewards while supporting the Manifold Finance ecosystem. By
-            participating in FOLD staking, you contribute to the network's security and decentralization.
+            Staking FOLD tokens allows you to earn rewards while supporting the Manifold Finance
+            ecosystem. By participating in FOLD staking, you contribute to the network's security
+            and decentralization.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-[#c9b3f5] bg-opacity-20 p-6 rounded-lg">
@@ -61,6 +65,5 @@ export default function FoldStakingPage() {
         </section>
       </main>
     </div>
-  )
+  );
 }
-

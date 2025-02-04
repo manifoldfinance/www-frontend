@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { Logo } from "@/app/components/logo"
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Logo } from "@/app/components/logo";
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,9 +13,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { Button } from "@/components/ui/button"
-import { Menu } from "lucide-react"
+} from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
 
 const solutions: { title: string; href: string; description: string }[] = [
   {
@@ -38,7 +38,7 @@ const solutions: { title: string; href: string; description: string }[] = [
     href: "/solutions/securerpc",
     description: "Stable and reliable blockchain interactions for your applications.",
   },
-]
+];
 
 const products: { title: string; href: string; description: string }[] = [
   {
@@ -61,7 +61,7 @@ const products: { title: string; href: string; description: string }[] = [
     href: "/products/meveth",
     description: "Maximized MEV rewards for Ethereum staking.",
   },
-]
+];
 
 const resources: { title: string; href: string; description: string }[] = [
   {
@@ -84,7 +84,7 @@ const resources: { title: string; href: string; description: string }[] = [
     href: "/support",
     description: "Get help from our team and community.",
   },
-]
+];
 
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
   ({ className, title, children, ...props }, ref) => {
@@ -96,19 +96,18 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWit
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className,
           )}
-          {...props}
-        >
+          {...props}>
           <div className="text-sm font-medium leading-none">{title}</div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
         </NavigationMenuLink>
       </li>
-    )
+    );
   },
-)
-ListItem.displayName = "ListItem"
+);
+ListItem.displayName = "ListItem";
 
 function MobileMenu() {
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = React.useState(false);
 
   return (
     <div className="md:hidden">
@@ -134,7 +133,7 @@ function MobileMenu() {
         </div>
       )}
     </div>
-  )
+  );
 }
 
 export function Header() {
@@ -149,14 +148,15 @@ export function Header() {
             <NavigationMenu className="hidden md:block">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-foreground">Solutions</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-foreground">
+                    Solutions
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid grid-cols-[1fr_2fr] w-[600px]">
                       <NavigationMenuLink asChild>
                         <a
                           className="flex flex-col justify-between h-full select-none rounded-l-md bg-gradient-to-br from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                          href="/solutions/staking"
-                        >
+                          href="/solutions/staking">
                           <div>
                             <Image
                               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ethereum2_Logo-G7XZRKQfQ3ujqhgs1ZKjTpoe3zVqab.png"
@@ -165,7 +165,9 @@ export function Header() {
                               height={38}
                               className="mb-3"
                             />
-                            <div className="text-lg font-medium text-foreground mb-2">High-Performance Staking</div>
+                            <div className="text-lg font-medium text-foreground mb-2">
+                              High-Performance Staking
+                            </div>
                             <p className="text-sm text-muted-foreground">
                               Build and manage efficient staking solutions for maximum returns.
                             </p>
@@ -175,7 +177,10 @@ export function Header() {
                       </NavigationMenuLink>
                       <ul className="grid gap-3 p-6 bg-background rounded-r-md">
                         {solutions.map((solution) => (
-                          <ListItem key={solution.title} title={solution.title} href={solution.href}>
+                          <ListItem
+                            key={solution.title}
+                            title={solution.title}
+                            href={solution.href}>
                             {solution.description}
                           </ListItem>
                         ))}
@@ -184,7 +189,9 @@ export function Header() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-foreground">Products</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-foreground">
+                    Products
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       {products.map((product) => (
@@ -196,7 +203,9 @@ export function Header() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-foreground">Resources</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-foreground">
+                    Resources
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       {resources.map((resource) => (
@@ -209,7 +218,9 @@ export function Header() {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/docs" legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>Documentation</NavigationMenuLink>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Documentation
+                    </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
@@ -219,6 +230,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }
-

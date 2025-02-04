@@ -7,6 +7,5 @@ export function Logo({ className }: { className?: string }) {
       width={40}
       height={40}
     />
-  )
+  );
 }
-

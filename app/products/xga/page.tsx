@@ -1,6 +1,6 @@
-import { BackgroundPaths } from "@/app/components/background-paths"
-import { FeatureSection } from "@/app/components/feature-section"
-import { Globe, Users, Link, VoteIcon } from "lucide-react"
+import { BackgroundPaths } from "@/app/components/background-paths";
+import { FeatureSection } from "@/app/components/feature-section";
+import { Globe, Users, Link, VoteIcon } from "lucide-react";
 
 const xgaFeatures = [
   {
@@ -23,7 +23,7 @@ const xgaFeatures = [
     title: "Efficient Voting",
     description: "Streamlined voting process for quick and secure decisions.",
   },
-]
+];
 
 export default function XGAPage() {
   return (
@@ -38,9 +38,9 @@ export default function XGAPage() {
         <section className="mt-16">
           <h2 className="text-3xl font-bold mb-6">What is XGA?</h2>
           <p className="text-lg mb-6">
-            XGA (Cross-chain Governance Aggregator) is a revolutionary platform that enables seamless governance across
-            multiple blockchain networks. It provides a unified interface for participating in decentralized
-            decision-making processes.
+            XGA (Cross-chain Governance Aggregator) is a revolutionary platform that enables
+            seamless governance across multiple blockchain networks. It provides a unified interface
+            for participating in decentralized decision-making processes.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-[#f0cdc2] bg-opacity-20 p-6 rounded-lg">
@@ -65,6 +65,5 @@ export default function XGAPage() {
         </section>
       </main>
     </div>
-  )
+  );
 }
-
