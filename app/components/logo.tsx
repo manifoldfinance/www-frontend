@@ -6,8 +6,10 @@ export function Logo() {
         fill="currentColor"
         fillOpacity={0.2}
       />
-      <path d="M20 36c8.837 0 16-7.163 16-16S28.837 4 20 4 4 11.163 4 20s7.163 16 16 16z" fill="currentColor" />
+      <path
+        d="M20 36c8.837 0 16-7.163 16-16S28.837 4 20 4 4 11.163 4 20s7.163 16 16 16z"
+        fill="currentColor"
+      />
     </svg>
-  )
+  );
 }
-

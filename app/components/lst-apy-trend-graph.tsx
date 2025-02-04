@@ -1,13 +1,22 @@
-"use client"
-import { Line, LineChart, ResponsiveContainer, XAxis, YAxis, Tooltip, CartesianGrid, Legend } from "recharts"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+"use client";
+import {
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
+  Tooltip,
+  CartesianGrid,
+  Legend,
+} from "recharts";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface LSTTrendData {
-  quarter: string
-  mevETH: number
-  stETH: number
-  rETH: number
-  oETH: number
+  quarter: string;
+  mevETH: number;
+  stETH: number;
+  rETH: number;
+  oETH: number;
 }
 
 const lstTrendData: LSTTrendData[] = [
@@ -15,7 +24,7 @@ const lstTrendData: LSTTrendData[] = [
   { quarter: "Q2 2024", mevETH: 5.2, stETH: 4.7, rETH: 4.8, oETH: 4.9 },
   { quarter: "Q3 2024", mevETH: 5.4, stETH: 4.6, rETH: 4.7, oETH: 4.8 },
   { quarter: "Q4 2024", mevETH: 5.6, stETH: 4.5, rETH: 4.6, oETH: 4.7 },
-]
+];
 
 export function LSTAPYTrendGraph() {
   return (
@@ -29,7 +38,13 @@ export function LSTAPYTrendGraph() {
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={lstTrendData}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="quarter" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
+              <XAxis
+                dataKey="quarter"
+                stroke="#888888"
+                fontSize={12}
+                tickLine={false}
+                axisLine={false}
+              />
               <YAxis
                 stroke="#888888"
                 fontSize={12}
@@ -77,6 +92,5 @@ export function LSTAPYTrendGraph() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
-

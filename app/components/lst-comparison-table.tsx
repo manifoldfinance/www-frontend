@@ -1,15 +1,22 @@
-"use client"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip"
-import { Info } from "lucide-react"
+"use client";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip";
+import { Info } from "lucide-react";
 
 interface LSTData {
-  name: string
-  apy: number
-  tvl: string
-  fee: string
-  decentralization: "Low" | "Medium" | "High"
-  liquidityScore: number
+  name: string;
+  apy: number;
+  tvl: string;
+  fee: string;
+  decentralization: "Low" | "Medium" | "High";
+  liquidityScore: number;
 }
 
 const lstData: LSTData[] = [
@@ -45,7 +52,7 @@ const lstData: LSTData[] = [
     decentralization: "Low",
     liquidityScore: 6,
   },
-]
+];
 
 export function LSTComparisonTable() {
   return (
@@ -87,6 +94,5 @@ export function LSTComparisonTable() {
         </Table>
       </div>
     </TooltipProvider>
-  )
+  );
 }
-

@@ -1,12 +1,12 @@
-import { notFound } from "next/navigation"
-import { Badge } from "@/components/ui/badge"
+import { notFound } from "next/navigation";
+import { Badge } from "@/components/ui/badge";
 
 interface BlogPost {
-  slug: string
-  title: string
-  date: string
-  content: string
-  category: string
+  slug: string;
+  title: string;
+  date: string;
+  content: string;
+  category: string;
 }
 
 const blogPosts: BlogPost[] = [
@@ -118,7 +118,7 @@ const blogPosts: BlogPost[] = [
       <p>As the Ethereum ecosystem evolves, Manifold Finance remains committed to providing cutting-edge solutions that leverage the latest scaling technologies.</p>
     `,
   },
-]
+];
 
 function CategoryBadge({ category }: { category: string }) {
   return (
@@ -130,18 +130,17 @@ function CategoryBadge({ category }: { category: string }) {
           : category === "Tutorial"
             ? "bg-green-500/10 text-green-500 hover:bg-green-500/20"
             : "bg-purple-500/10 text-purple-500 hover:bg-purple-500/20"
-      }
-    >
+      }>
       {category}
     </Badge>
-  )
+  );
 }
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = blogPosts.find((post) => post.slug === params.slug)
+  const post = blogPosts.find((post) => post.slug === params.slug);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -155,10 +154,12 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             </div>
             <h1 className="text-4xl font-heading">{post.title}</h1>
           </div>
-          <div className="prose dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
+          <div
+            className="prose dark:prose-invert max-w-none"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
         </article>
       </div>
     </div>
-  )
+  );
 }
-

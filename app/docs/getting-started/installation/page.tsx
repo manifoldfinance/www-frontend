@@ -1,4 +1,4 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function InstallationPage() {
   return (
@@ -44,6 +44,5 @@ export default function InstallationPage() {
         </pre>
       </div>
     </div>
-  )
+  );
 }
-

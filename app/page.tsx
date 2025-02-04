@@ -1,4 +1,4 @@
-import { BackgroundPaths } from "./components/background-paths"
+import { BackgroundPaths } from "./components/background-paths";
 
 export default function Page() {
   return (
@@ -22,6 +22,5 @@ export default function Page() {
         />
       </main>
     </div>
-  )
+  );
 }
-

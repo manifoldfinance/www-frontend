@@ -1,4 +1,4 @@
-import { BackgroundPaths } from "../../components/background-paths"
+import { BackgroundPaths } from "../../components/background-paths";
 
 export default function MevRelayProtectionPage() {
   return (
@@ -10,12 +10,11 @@ export default function MevRelayProtectionPage() {
       <main className="container mx-auto px-4 py-12">
         <h2 className="text-3xl font-bold mb-8 text-center">MEV Relay and Protection</h2>
         <p className="text-lg mb-6">
-          Our MEV relay and protection services help safeguard your transactions and maximize value in the face of MEV
-          extraction.
+          Our MEV relay and protection services help safeguard your transactions and maximize value
+          in the face of MEV extraction.
         </p>
         {/* Add more content here */}
       </main>
     </div>
-  )
+  );
 }
-

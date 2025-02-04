@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { Logo } from "@/app/components/logo"
-import { StatusIndicator } from "@/app/components/status-indicator"
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import Link from "next/link";
+import { Logo } from "@/app/components/logo";
+import { StatusIndicator } from "@/app/components/status-indicator";
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,9 +13,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { Button } from "@/components/ui/button"
-import { Menu } from "lucide-react"
+} from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
 
 const products: { title: string; href: string; description: string }[] = [
   {
@@ -38,7 +38,7 @@ const products: { title: string; href: string; description: string }[] = [
     href: "/solutions/securerpc",
     description: "Stable and reliable blockchain interactions for your applications.",
   },
-]
+];
 
 const resources: { title: string; href: string; description: string }[] = [
   {
@@ -61,7 +61,7 @@ const resources: { title: string; href: string; description: string }[] = [
     href: "/support",
     description: "Get help from our team and community.",
   },
-]
+];
 
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
   ({ className, title, children, ...props }, ref) => {
@@ -73,19 +73,18 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWit
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className,
           )}
-          {...props}
-        >
+          {...props}>
           <div className="text-sm font-medium leading-none">{title}</div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
         </NavigationMenuLink>
       </li>
-    )
+    );
   },
-)
-ListItem.displayName = "ListItem"
+);
+ListItem.displayName = "ListItem";
 
 function MobileMenu() {
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = React.useState(false);
 
   return (
     <div className="md:hidden">
@@ -112,7 +111,7 @@ function MobileMenu() {
         </div>
       )}
     </div>
-  )
+  );
 }
 
 export function Header() {
@@ -128,14 +127,15 @@ export function Header() {
             <NavigationMenu className="hidden md:block">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-foreground">Products</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-foreground">
+                    Products
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid grid-cols-[1fr_2fr] w-[600px]">
                       <NavigationMenuLink asChild>
                         <a
                           className="flex flex-col justify-between h-full select-none rounded-l-md bg-gradient-to-br from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                          href="/solutions/mev"
-                        >
+                          href="/solutions/mev">
                           <div>
                             <svg
                               aria-hidden
@@ -143,13 +143,14 @@ export function Header() {
                               height="38"
                               viewBox="0 0 25 25"
                               fill="currentColor"
-                              className="h-6 w-6 text-primary mb-3"
-                            >
+                              className="h-6 w-6 text-primary mb-3">
                               <path d="M12 25C7.58173 25 4 21.4183 4 17C4 12.5817 7.58173 9 12 9V25Z"></path>
                               <path d="M12 0H4V8H12V0Z"></path>
                               <path d="M17 8C19.2091 8 21 6.20914 21 4C21 1.79086 19.2091 0 17 0C14.7909 0 13 1.79086 13 4C13 6.20914 14.7909 8 17 8Z"></path>
                             </svg>
-                            <div className="text-lg font-medium text-foreground mb-2">MEV Optimization</div>
+                            <div className="text-lg font-medium text-foreground mb-2">
+                              MEV Optimization
+                            </div>
                             <p className="text-sm text-muted-foreground">
                               Maximize MEV earnings with our advanced strategies and tools.
                             </p>
@@ -168,7 +169,9 @@ export function Header() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-foreground">Resources</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-foreground">
+                    Resources
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       {resources.map((resource) => (
@@ -181,7 +184,9 @@ export function Header() {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/docs" legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>Documentation</NavigationMenuLink>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Documentation
+                    </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
@@ -192,6 +197,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }
-

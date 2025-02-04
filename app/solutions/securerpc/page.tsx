@@ -1,7 +1,7 @@
-import { BackgroundPaths } from "../../components/background-paths"
-import { FeatureSection } from "../../components/feature-section"
-import { Server, Shield, Zap, LineChart } from "lucide-react"
-import { APIEndpoint } from "../../components/api-endpoint"
+import { BackgroundPaths } from "../../components/background-paths";
+import { FeatureSection } from "../../components/feature-section";
+import { Server, Shield, Zap, LineChart } from "lucide-react";
+import { APIEndpoint } from "../../components/api-endpoint";
 
 export default function SecureRpcPage() {
   const secureRpcFeatures = [
@@ -25,7 +25,7 @@ export default function SecureRpcPage() {
       title: "Scalable Infrastructure",
       description: "Enterprise-grade infrastructure that scales with your needs.",
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-blackA12 text-white">
@@ -58,6 +58,5 @@ export default function SecureRpcPage() {
         <APIEndpoint />
       </main>
     </div>
-  )
+  );
 }
-

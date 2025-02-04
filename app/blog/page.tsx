@@ -1,12 +1,12 @@
-import Link from "next/link"
-import { Badge } from "@/components/ui/badge"
+import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 
 interface BlogPost {
-  slug: string
-  title: string
-  date: string
-  excerpt: string
-  category: string
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  category: string;
 }
 
 const blogPosts: BlogPost[] = [
@@ -22,7 +22,8 @@ const blogPosts: BlogPost[] = [
     slug: "optimizing-defi-strategies",
     title: "Optimizing DeFi Strategies with Manifold Finance",
     date: "February 1, 2025",
-    excerpt: "Discover how to leverage Manifold Finance's tools to optimize your DeFi strategies and maximize returns.",
+    excerpt:
+      "Discover how to leverage Manifold Finance's tools to optimize your DeFi strategies and maximize returns.",
     category: "Tutorial",
   },
   {
@@ -33,7 +34,7 @@ const blogPosts: BlogPost[] = [
       "We share our thoughts on the future of Ethereum scaling solutions and how Manifold Finance is positioned to support the ecosystem.",
     category: "Industry Insights",
   },
-]
+];
 
 function CategoryBadge({ category }: { category: string }) {
   return (
@@ -45,11 +46,10 @@ function CategoryBadge({ category }: { category: string }) {
           : category === "Tutorial"
             ? "bg-green-500/10 text-green-500 hover:bg-green-500/20"
             : "bg-purple-500/10 text-purple-500 hover:bg-purple-500/20"
-      }
-    >
+      }>
       {category}
     </Badge>
-  )
+  );
 }
 
 export default function BlogPage() {
@@ -78,6 +78,5 @@ export default function BlogPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

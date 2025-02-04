@@ -1,9 +1,9 @@
-import Link from "next/link"
-import { Twitter, Github } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
+import Link from "next/link";
+import { Twitter, Github } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 // This would typically come from an environment variable or build-time constant
-const GIT_VERSION_HASH = "a1b2c3d"
+const GIT_VERSION_HASH = "a1b2c3d";
 
 export function Footer() {
   return (
@@ -23,16 +23,14 @@ export function Footer() {
               href="https://twitter.com/manifoldfinance"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
+              className="text-gray-400 hover:text-white transition-colors">
               <Twitter className="w-5 h-5" />
             </Link>
             <Link
               href="https://github.com/manifoldfinance"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
+              className="text-gray-400 hover:text-white transition-colors">
               <Github className="w-5 h-5" />
             </Link>
           </div>
@@ -45,6 +43,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
-

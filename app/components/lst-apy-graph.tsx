@@ -1,10 +1,18 @@
-"use client"
-import { Line, LineChart, ResponsiveContainer, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+"use client";
+import {
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
+  Tooltip,
+  CartesianGrid,
+} from "recharts";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface LSTData {
-  name: string
-  apy: number
+  name: string;
+  apy: number;
 }
 
 const lstData: LSTData[] = [
@@ -12,21 +20,29 @@ const lstData: LSTData[] = [
   { name: "stETH", apy: 4.8 },
   { name: "rETH", apy: 4.9 },
   { name: "oETH", apy: 5.0 },
-]
+];
 
 export function LSTAPYGraph() {
   return (
     <Card>
       <CardHeader>
         <CardTitle>LST APY Comparison</CardTitle>
-        <CardDescription>Annual Percentage Yield for different Liquid Staking Tokens (Log Scale)</CardDescription>
+        <CardDescription>
+          Annual Percentage Yield for different Liquid Staking Tokens (Log Scale)
+        </CardDescription>
       </CardHeader>
       <CardContent className="pb-4">
         <div className="h-[300px]">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={lstData}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
+              <XAxis
+                dataKey="name"
+                stroke="#888888"
+                fontSize={12}
+                tickLine={false}
+                axisLine={false}
+              />
               <YAxis
                 stroke="#888888"
                 fontSize={12}
@@ -53,6 +69,5 @@ export function LSTAPYGraph() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
-

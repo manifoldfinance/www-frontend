@@ -1,8 +1,8 @@
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 type StatusIndicatorProps = {
-  status: "operational" | "degraded" | "outage"
-}
+  status: "operational" | "degraded" | "outage";
+};
 
 export function StatusIndicator({ status }: StatusIndicatorProps) {
   return (
@@ -17,6 +17,5 @@ export function StatusIndicator({ status }: StatusIndicatorProps) {
       />
       <span className="text-sm text-muted-foreground capitalize">{status}</span>
     </div>
-  )
+  );
 }
-
