@@ -21,7 +21,7 @@ const notoSans = Noto_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://manifoldfinance.com"),
   title: {
-    default: "Manifold Finance - Optimized Infrastructure for Ethereum",
+    default: "Manifold Finance  - Powering markets across networks.",
     template: "%s | Manifold Finance",
   },
   description:
