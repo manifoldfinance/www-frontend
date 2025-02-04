@@ -1,9 +1,9 @@
 "use client";
 
-import * as React from "react";
+import { CaretDownIcon } from "@radix-ui/react-icons";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cva } from "class-variance-authority";
-import { CaretDownIcon } from "@radix-ui/react-icons";
+import * as React from "react";
 
 import { cn } from "@/lib/utils";
 

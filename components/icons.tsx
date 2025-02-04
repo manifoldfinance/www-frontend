@@ -1,9 +1,9 @@
 import {
+  type LucideIcon,
   type LightbulbIcon as LucideProps,
   Moon,
   SunMedium,
   Twitter,
-  type LucideIcon,
 } from "lucide-react";
 
 export type Icon = LucideIcon;

@@ -1,6 +1,6 @@
 import { BackgroundPaths } from "@/app/components/background-paths";
 import { FeatureSection } from "@/app/components/feature-section";
-import { Globe, Users, Link, VoteIcon } from "lucide-react";
+import { Globe, Link, Users, VoteIcon } from "lucide-react";
 
 const xgaFeatures = [
   {

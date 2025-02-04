@@ -1,7 +1,7 @@
+import { Eye, Lock, Shield, Zap } from "lucide-react";
 import { BackgroundPaths } from "../../components/background-paths";
 import { FeatureSection } from "../../components/feature-section";
 import { MEVProtectionComparison } from "../../components/mev-protection-comparison";
-import { Shield, Zap, Lock, Eye } from "lucide-react";
 
 export default function RelayProtectPage() {
   const relayProtectFeatures = [

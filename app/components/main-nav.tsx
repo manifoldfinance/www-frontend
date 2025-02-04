@@ -1,14 +1,12 @@
 "use client";
 
-import * as React from "react";
-import Link from "next/link";
-import { Menu } from "lucide-react";
 import { CaretDownIcon } from "@radix-ui/react-icons";
+import { Menu } from "lucide-react";
+import Link from "next/link";
+import * as React from "react";
 
-import { cn } from "@/lib/utils";
 import { Logo } from "@/app/components/logo";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Menubar,
   MenubarContent,
@@ -16,6 +14,8 @@ import {
   MenubarMenu,
   MenubarTrigger,
 } from "@/components/ui/menubar";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 
 const solutions: { title: string; href: string; description: string }[] = [
   {

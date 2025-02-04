@@ -1,6 +1,6 @@
 import { BackgroundPaths } from "@/app/components/background-paths";
 import { FeatureSection } from "@/app/components/feature-section";
-import { Coins, Lock, BarChart, Zap } from "lucide-react";
+import { BarChart, Coins, Lock, Zap } from "lucide-react";
 
 const foldStakingFeatures = [
   {

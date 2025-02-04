@@ -1,6 +1,6 @@
 import { BackgroundPaths } from "@/app/components/background-paths";
 import { FeatureSection } from "@/app/components/feature-section";
-import { Zap, TrendingUp, Shield, Coins } from "lucide-react";
+import { Coins, Shield, TrendingUp, Zap } from "lucide-react";
 
 const mevETHFeatures = [
   {

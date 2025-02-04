@@ -1,6 +1,6 @@
 import { BackgroundPaths } from "@/app/components/background-paths";
 import { FeatureSection } from "@/app/components/feature-section";
-import { Shield, Zap, Lock, Server } from "lucide-react";
+import { Lock, Server, Shield, Zap } from "lucide-react";
 
 const secureRPCFeatures = [
   {

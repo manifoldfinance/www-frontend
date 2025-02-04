@@ -1,5 +1,5 @@
+import { DollarSign, Shield, Zap } from "lucide-react";
 import type React from "react";
-import { Zap, Shield, DollarSign } from "lucide-react";
 
 export function FeatureGrid() {
   return (

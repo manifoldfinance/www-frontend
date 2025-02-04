@@ -1,10 +1,7 @@
 "use client";
 
-import * as React from "react";
-import Link from "next/link";
-import Image from "next/image";
 import { Logo } from "@/app/components/logo";
-import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,8 +11,11 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import * as React from "react";
 
 const solutions: { title: string; href: string; description: string }[] = [
   {

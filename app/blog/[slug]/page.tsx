@@ -1,5 +1,5 @@
-import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
+import { notFound } from "next/navigation";
 
 interface BlogPost {
   slug: string;

@@ -1,6 +1,6 @@
+import { DollarSign, LineChart, Shield, Zap } from "lucide-react";
 import { BackgroundPaths } from "../../components/background-paths";
 import { FeatureSection } from "../../components/feature-section";
-import { DollarSign, Zap, Shield, LineChart } from "lucide-react";
 
 export default function MevPage() {
   const mevFeatures = [
