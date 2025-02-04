@@ -1,5 +1,5 @@
+import { DollarSign, Shield, Zap } from "lucide-react";
 import type React from "react";
-import { Zap, Shield, DollarSign, Server } from "lucide-react";
 
 export function FeatureGrid() {
   return (
@@ -21,9 +21,9 @@ export function FeatureGrid() {
           description="Maximize MEV earnings with our advanced strategies and tools."
         />
         <FeatureCard
-          icon={<Server className="w-6 h-6" />}
-          title="Enterprise SecureRPC"
-          description="Stable and reliable blockchain interactions for your applications."
+          icon={<Shield className="w-6 h-6" />}
+          title="Relay+ Protect"
+          description="Advanced MEV protection and transaction privacy for Ethereum."
         />
       </div>
     </div>

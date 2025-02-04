@@ -1,5 +1,5 @@
-import { DocsSidebar } from "@/app/components/docs-sidebar";
 import { Breadcrumb } from "@/app/components/breadcrumb";
+import { DocsSidebar } from "@/app/components/docs-sidebar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import type React from "react"; // Added import for React
 

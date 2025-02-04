@@ -1,11 +1,11 @@
-import { Space_Grotesk, Noto_Sans } from "next/font/google";
-import { Footer } from "./components/footer";
+import { Noto_Sans, Space_Grotesk } from "next/font/google";
 import ErrorBoundary from "./components/error-boundary";
 import "./globals.css";
 import type { Metadata } from "next";
+import type React from "react";
 import { CommandMenu } from "./components/command-menu";
 import { Header } from "./components/header";
-import type React from "react";
+import { LayoutWrapper } from "./components/layout-wrapper";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -21,7 +21,7 @@ const notoSans = Noto_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://manifoldfinance.com"),
   title: {
-    default: "Manifold Finance - Optimized Infrastructure for Ethereum",
+    default: "Manifold Finance  - Powering markets across networks.",
     template: "%s | Manifold Finance",
   },
   description:
@@ -47,25 +47,25 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://manifoldfinance.com",
     siteName: "Manifold Finance",
-    title: "Manifold Finance - Optimized Infrastructure for Ethereum",
+    title: "Manifold Finance - Powering markets across networks.",
     description:
-      "Build high-performance staking solutions, maximize MEV earnings, and leverage enterprise-grade SecureRPC with Manifold Finance.",
+      "High-yielding staking solutions, maximize MEV earnings, and more with Manifold Finance.",
     images: [
       {
         url: "https://manifoldfinance.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Manifold Finance - Optimized Ethereum Infrastructure",
+        alt: "Manifold Finance - Powering markets across networks",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Manifold Finance - Optimized Infrastructure for Ethereum",
+    title: "Manifold Finance -  Powering markets across networks",
     description:
-      "Build high-performance staking solutions, maximize MEV earnings, and leverage enterprise-grade SecureRPC with Manifold Finance.",
+      "High-yielding staking solutions, maximize MEV earnings, and more with Manifold Finance.",
     images: ["https://manifoldfinance.com/og-image.jpg"],
-    creator: "@manifoldfinance",
+    creator: "@foldfinance",
   },
   icons: {
     icon: "/favicon.ico",
@@ -80,14 +80,18 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  //const pathname = usePathname()
+  //const isHomePage = pathname === "/"
+
   return (
     <html lang="en" className={`dark ${spaceGrotesk.variable} ${notoSans.variable}`}>
       <body
         className={`min-h-screen bg-background text-foreground flex flex-col ${notoSans.className}`}>
         <ErrorBoundary>
           <Header />
-          <main className="flex-grow pt-20">{children}</main>
-          <Footer />
+          <LayoutWrapper>
+            <main className="flex-grow pt-20">{children}</main>
+          </LayoutWrapper>
           <CommandMenu />
         </ErrorBoundary>
       </body>

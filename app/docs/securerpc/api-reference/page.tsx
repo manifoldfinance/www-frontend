@@ -14,7 +14,7 @@ export default function ApiReferencePage() {
             request headers:
           </p>
           <pre className="rounded-lg bg-muted p-4">
-            <code>{`X-API-Key: your_api_key`}</code>
+            <code>{"X-API-Key: your_api_key"}</code>
           </pre>
         </section>
 

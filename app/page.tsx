@@ -2,7 +2,7 @@ import { BackgroundPaths } from "./components/background-paths";
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-[#141414] text-white flex flex-col">
+    <div className="min-h-screen text-white flex flex-col">
       <main className="flex-grow">
         <BackgroundPaths
           title="Manifold Finance|"

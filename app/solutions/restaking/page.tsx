@@ -1,6 +1,6 @@
+import { BarChart3, Lock, Repeat, Shield } from "lucide-react";
 import { BackgroundPaths } from "../../components/background-paths";
 import { FeatureSection } from "../../components/feature-section";
-import { Shield, Lock, Repeat, BarChart3 } from "lucide-react";
 
 export default function RestakingPage() {
   const restakingFeatures = [

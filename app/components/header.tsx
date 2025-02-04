@@ -1,10 +1,7 @@
 "use client";
 
-import * as React from "react";
-import Link from "next/link";
 import { Logo } from "@/app/components/logo";
-import { StatusIndicator } from "@/app/components/status-indicator";
-import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,29 +11,55 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import * as React from "react";
 
-const products: { title: string; href: string; description: string }[] = [
+const solutions: { title: string; href: string; description: string }[] = [
   {
-    title: "High-Performance Staking",
+    title: "High-Yield Staking",
     href: "/solutions/staking",
-    description: "Build and manage efficient staking solutions for maximum returns.",
+    description: "Maximum returns, natively.",
   },
   {
-    title: "Secure Restaking",
+    title: "AVS Restaking",
     href: "/solutions/restaking",
-    description: "Leverage restaking protocols while ensuring top-notch security.",
+    description: "AVS Operations",
   },
   {
-    title: "MEV Optimization",
+    title: "MEV Relay",
     href: "/solutions/mev",
-    description: "Maximize MEV earnings with our advanced strategies and tools.",
+    description: "Maximize MEV earnings as a Validator. Protect yourself as a user.",
   },
   {
     title: "Enterprise SecureRPC",
     href: "/solutions/securerpc",
-    description: "Stable and reliable blockchain interactions for your applications.",
+    description: "MEV Protection and RPC as a Service",
+  },
+];
+
+const products: { title: string; href: string; description: string }[] = [
+  {
+    title: "FOLD Staking",
+    href: "/products/fold-staking",
+    description: "Stake your FOLD tokens and earn rewards.",
+  },
+  {
+    title: "SecureRPC",
+    href: "/products/securerpc",
+    description: "MEV Protection as a Service",
+  },
+  {
+    title: "XGA",
+    href: "https://xga.com",
+    description: "Hello World Auction.",
+  },
+  {
+    title: "mevETH",
+    href: "/products/meveth",
+    description: "Maximized MEV rewards for Ethereum staking.",
   },
 ];
 
@@ -67,15 +90,17 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWit
   ({ className, title, children, ...props }, ref) => {
     return (
       <li>
-        <NavigationMenuLink
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className,
-          )}
-          {...props}>
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
+        <NavigationMenuLink asChild>
+          <a
+            ref={ref}
+            className={cn(
+              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+              className,
+            )}
+            {...props}>
+            <div className="text-sm font-medium leading-none">{title}</div>
+            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
+          </a>
         </NavigationMenuLink>
       </li>
     );
@@ -93,7 +118,6 @@ function MobileMenu() {
       </Button>
       {isOpen && (
         <div className="absolute top-16 left-0 w-full bg-background border-b border-border p-4">
-          {/* Add mobile menu items here */}
           <nav className="flex flex-col space-y-4">
             <Link href="/solutions" className="text-sm font-medium">
               Solutions
@@ -121,51 +145,63 @@ export function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center">
             <Logo className="h-8 w-8 md:h-10 md:w-10" />
-            <span className="ml-2 text-lg font-semibold hidden sm:inline">Manifold Finance</span>
           </Link>
           <div className="flex items-center space-x-4">
             <NavigationMenu className="hidden md:block">
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="text-foreground">
-                    Products
+                    Solutions
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid grid-cols-[1fr_2fr] w-[600px]">
                       <NavigationMenuLink asChild>
                         <a
                           className="flex flex-col justify-between h-full select-none rounded-l-md bg-gradient-to-br from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                          href="/solutions/mev">
+                          href="/solutions/staking">
                           <div>
-                            <svg
-                              aria-hidden
-                              width="38"
-                              height="38"
-                              viewBox="0 0 25 25"
-                              fill="currentColor"
-                              className="h-6 w-6 text-primary mb-3">
-                              <path d="M12 25C7.58173 25 4 21.4183 4 17C4 12.5817 7.58173 9 12 9V25Z"></path>
-                              <path d="M12 0H4V8H12V0Z"></path>
-                              <path d="M17 8C19.2091 8 21 6.20914 21 4C21 1.79086 19.2091 0 17 0C14.7909 0 13 1.79086 13 4C13 6.20914 14.7909 8 17 8Z"></path>
-                            </svg>
+                            <Image
+                              src="/eth_frame.svg"
+                              alt="Ethereum Logo"
+                              width={38}
+                              height={38}
+                              className="mb-3"
+                            />
                             <div className="text-lg font-medium text-foreground mb-2">
-                              MEV Optimization
+                              High Yield Staking
                             </div>
                             <p className="text-sm text-muted-foreground">
-                              Maximize MEV earnings with our advanced strategies and tools.
+                              +4.5% Without any Restaking
                             </p>
                           </div>
                           <div className="text-sm font-medium text-primary mt-4">Learn more →</div>
                         </a>
                       </NavigationMenuLink>
                       <ul className="grid gap-3 p-6 bg-background rounded-r-md">
-                        {products.map((product) => (
-                          <ListItem key={product.title} title={product.title} href={product.href}>
-                            {product.description}
+                        {solutions.map((solution) => (
+                          <ListItem
+                            key={solution.title}
+                            title={solution.title}
+                            href={solution.href}>
+                            {solution.description}
                           </ListItem>
                         ))}
                       </ul>
                     </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-foreground">
+                    Products
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                      {products.map((product) => (
+                        <ListItem key={product.title} title={product.title} href={product.href}>
+                          {product.description}
+                        </ListItem>
+                      ))}
+                    </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
@@ -191,7 +227,6 @@ export function Header() {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-            <StatusIndicator status="operational" className="hidden sm:flex" />
             <MobileMenu />
           </div>
         </div>

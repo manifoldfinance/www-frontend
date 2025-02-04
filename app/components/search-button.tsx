@@ -1,7 +1,7 @@
 "use client";
 
-import { useCallback } from "react";
 import { Button } from "@/components/ui/button";
+import { useCallback } from "react";
 
 export function SearchButton() {
   const handleClick = useCallback(() => {

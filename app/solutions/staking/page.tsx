@@ -1,10 +1,10 @@
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { LineChart, Server, Shield, Zap } from "lucide-react";
 import { BackgroundPaths } from "../../components/background-paths";
 import { FeatureSection } from "../../components/feature-section";
-import { LSTComparisonTable } from "../../components/lst-comparison-table";
 import { LSTAPYGraph } from "../../components/lst-apy-graph";
 import { LSTAPYTrendGraph } from "../../components/lst-apy-trend-graph";
-import { Zap, Shield, LineChart, Server } from "lucide-react";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { LSTComparisonTable } from "../../components/lst-comparison-table";
 
 export default function StakingPage() {
   const stakingFeatures = [
