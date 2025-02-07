@@ -25,8 +25,7 @@ export const metadata: Metadata = {
     default: "Manifold Finance - Powering Markets across Networks",
     template: "%s | Manifold Finance",
   },
-  description:
-    "Powering Markets across Networks",
+  description: "Powering Markets across Networks",
   keywords: [
     "Manifold Finance",
     "Ethereum",
@@ -49,8 +48,7 @@ export const metadata: Metadata = {
     url: "https://manifoldfinance.com",
     siteName: "Manifold Finance",
     title: "Manifold Finance - Powering Markets across Networks",
-    description:
-      "Unifying networks and markets together",
+    description: "Unifying networks and markets together",
     images: [
       {
         url: "https://manifoldfinance.com/og-image.jpg",
@@ -63,8 +61,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Manifold Finance - Powering Markets across Networks",
-    description:
-      "Unifying networks and markets together",
+    description: "Unifying networks and markets together",
     images: ["https://manifoldfinance.com/og-image.jpg"],
     creator: "@manifoldfinance",
   },
