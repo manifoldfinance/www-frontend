@@ -1,3 +1,5 @@
+import { DocsNavigation } from "@/app/components/docs-navigation"
+
 export default function IntroductionPage() {
   return (
     <div className="space-y-6">
@@ -23,6 +25,9 @@ export default function IntroductionPage() {
           <li>Advanced analytics and monitoring</li>
         </ul>
       </div>
+      <DocsNavigation
+        nextPage={{ title: "Installation", href: "/docs/getting-started/installation" }}
+      />
     </div>
-  );
+  )
 }

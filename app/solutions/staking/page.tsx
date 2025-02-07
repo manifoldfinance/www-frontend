@@ -1,10 +1,10 @@
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { LineChart, Server, Shield, Zap } from "lucide-react";
-import { BackgroundPaths } from "../../components/background-paths";
-import { FeatureSection } from "../../components/feature-section";
-import { LSTAPYGraph } from "../../components/lst-apy-graph";
-import { LSTAPYTrendGraph } from "../../components/lst-apy-trend-graph";
-import { LSTComparisonTable } from "../../components/lst-comparison-table";
+import { BackgroundPaths } from "../../components/background-paths"
+import { FeatureSection } from "../../components/feature-section"
+import { LSTComparisonTable } from "../../components/lst-comparison-table"
+import { LSTAPYGraph } from "../../components/lst-apy-graph"
+import { LSTAPYTrendGraph } from "../../components/lst-apy-trend-graph"
+import { Zap, Shield, LineChart, Server } from "lucide-react"
+import { TooltipProvider } from "@/components/ui/tooltip"
 
 export default function StakingPage() {
   const stakingFeatures = [
@@ -28,7 +28,7 @@ export default function StakingPage() {
       title: "Validator Management",
       description: "Streamlined validator setup and maintenance tools.",
     },
-  ];
+  ]
 
   return (
     <div className="min-h-screen bg-blackA12 text-white">
@@ -88,5 +88,5 @@ export default function StakingPage() {
         </section>
       </main>
     </div>
-  );
+  )
 }

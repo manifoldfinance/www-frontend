@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { ArrowRight } from "lucide-react"
 
 export function CTASection() {
   return (
@@ -20,7 +20,8 @@ export function CTASection() {
             <Button
               asChild
               variant="default"
-              className="bg-green9 hover:bg-green10 text-white rounded-full px-6 h-12">
+              className="bg-green9 hover:bg-green10 text-white rounded-full px-6 h-12"
+            >
               <Link href="/get-started" className="flex items-center gap-2">
                 Get Started
                 <ArrowRight className="w-4 h-4" />
@@ -30,5 +31,5 @@ export function CTASection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

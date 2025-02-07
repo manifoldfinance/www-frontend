@@ -1,4 +1,4 @@
-import { BackgroundPaths } from "../../components/background-paths";
+import { BackgroundPaths } from "../../components/background-paths"
 
 export default function HedgingExecutionPage() {
   return (
@@ -54,5 +54,5 @@ export default function HedgingExecutionPage() {
         </div>
       </main>
     </div>
-  );
+  )
 }

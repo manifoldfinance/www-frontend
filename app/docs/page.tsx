@@ -1,14 +1,14 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
 
 export default function DocsPage() {
   return (
     <div className="space-y-6">
       <h1 className="text-3xl font-bold">Documentation</h1>
       <p className="text-muted-foreground text-lg">
-        Welcome to the Manifold Finance documentation. Here you'll find comprehensive guides and
-        documentation to help you start working with Manifold Finance as quickly as possible.
+        Welcome to the Manifold Finance documentation. This guide is under construction, so feel
+        free to ask questions on our forums!
       </p>
 
       <div className="grid gap-6 md:grid-cols-2">
@@ -16,13 +16,14 @@ export default function DocsPage() {
           <CardHeader>
             <CardTitle>Getting Started</CardTitle>
             <CardDescription>
-              Learn the basics of Manifold Finance and get started with our platform.
+              Learn the basics of Manifold Finance and get started with our solutions.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <Link
               href="/docs/getting-started/introduction"
-              className="text-primary hover:underline inline-flex items-center">
+              className="text-primary hover:underline inline-flex items-center"
+            >
               Read more <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </CardContent>
@@ -38,7 +39,8 @@ export default function DocsPage() {
           <CardContent>
             <Link
               href="/docs/securerpc/api-reference"
-              className="text-primary hover:underline inline-flex items-center">
+              className="text-primary hover:underline inline-flex items-center"
+            >
               Read more <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </CardContent>
@@ -48,13 +50,14 @@ export default function DocsPage() {
           <CardHeader>
             <CardTitle>Staking</CardTitle>
             <CardDescription>
-              Learn about our high-performance staking solutions and how to maximize your returns.
+              Learn about our high-yield staking solutions and how to maximize your returns.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <Link
               href="/docs/staking/overview"
-              className="text-primary hover:underline inline-flex items-center">
+              className="text-primary hover:underline inline-flex items-center"
+            >
               Read more <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </CardContent>
@@ -70,12 +73,13 @@ export default function DocsPage() {
           <CardContent>
             <Link
               href="/docs/faq"
-              className="text-primary hover:underline inline-flex items-center">
+              className="text-primary hover:underline inline-flex items-center"
+            >
               Read more <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </CardContent>
         </Card>
       </div>
     </div>
-  );
+  )
 }

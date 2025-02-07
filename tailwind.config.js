@@ -1,4 +1,4 @@
-const { blackA, mauve, violet, purple, indigo } = require("@radix-ui/colors");
+const { blackA, mauve, violet, purple, indigo } = require("@radix-ui/colors")
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -72,4 +72,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
-};
+}

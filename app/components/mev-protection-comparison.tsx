@@ -1,15 +1,15 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import { useState } from "react";
+import { useState } from "react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { ChevronDown, ChevronUp } from "lucide-react"
 
 interface ComparisonData {
-  feature: string;
-  relayProtect: string;
-  flashbotsMevShare: string;
-  mevBlocker: string;
+  feature: string
+  relayProtect: string
+  flashbotsMevShare: string
+  mevBlocker: string
 }
 
 const comparisonData: ComparisonData[] = [
@@ -104,16 +104,16 @@ const comparisonData: ComparisonData[] = [
     flashbotsMevShare: "Complex upgrade path with multiple stakeholders",
     mevBlocker: "Moderate upgrade complexity with partial compatibility",
   },
-];
+]
 
 export function MEVProtectionComparison() {
-  const [expandedRows, setExpandedRows] = useState<number[]>([]);
+  const [expandedRows, setExpandedRows] = useState<number[]>([])
 
   const toggleRow = (index: number) => {
     setExpandedRows((prev) =>
       prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index],
-    );
-  };
+    )
+  }
 
   return (
     <Card>
@@ -147,7 +147,8 @@ export function MEVProtectionComparison() {
                         variant="ghost"
                         size="sm"
                         onClick={() => toggleRow(index)}
-                        className="mt-1">
+                        className="mt-1"
+                      >
                         {expandedRows.includes(index) ? (
                           <>
                             <ChevronUp className="h-4 w-4 mr-1" />
@@ -179,5 +180,5 @@ export function MEVProtectionComparison() {
         </div>
       </CardContent>
     </Card>
-  );
+  )
 }

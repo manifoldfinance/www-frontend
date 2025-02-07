@@ -1,7 +1,7 @@
-import { Eye, Lock, Shield, Zap } from "lucide-react";
-import { BackgroundPaths } from "../../components/background-paths";
-import { FeatureSection } from "../../components/feature-section";
-import { MEVProtectionComparison } from "../../components/mev-protection-comparison";
+import { BackgroundPaths } from "../../components/background-paths"
+import { FeatureSection } from "../../components/feature-section"
+import { MEVProtectionComparison } from "../../components/mev-protection-comparison"
+import { Shield, Zap, Lock, Eye } from "lucide-react"
 
 export default function RelayProtectPage() {
   const relayProtectFeatures = [
@@ -25,7 +25,7 @@ export default function RelayProtectPage() {
       title: "Transparent Execution",
       description: "Full visibility into transaction execution and MEV capture.",
     },
-  ];
+  ]
 
   return (
     <div className="min-h-screen bg-blackA12 text-white">
@@ -110,5 +110,5 @@ export default function RelayProtectPage() {
         </section>
       </main>
     </div>
-  );
+  )
 }

@@ -1,10 +1,17 @@
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
-import { Github, Twitter } from "lucide-react";
-import Link from "next/link";
-import { Logo } from "./logo";
+import Link from "next/link"
+import { TwitterIcon as TwitterLogoIcon, GitlabIcon as GitHubLogoIcon } from "lucide-react"
+import { Logo } from "./logo"
+import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card"
 
 // This would typically come from an environment variable or build-time constant
-const GIT_VERSION_HASH = "a1b2c3d";
+const GIT_VERSION_HASH = "a1b2c3d"
+
+const sitemapLinks = [
+  { name: "For Validators", href: "/validators" },
+  { name: "For Projects", href: "/projects" },
+  { name: "For Restaking", href: "/restaking" },
+  { name: "For Infrastructure", href: "/infrastructure" },
+]
 
 export function Footer() {
   return (
@@ -20,20 +27,22 @@ export function Footer() {
             </p>
           </div>
           <div className="flex items-center space-x-4">
-            <Link
-              href="https://twitter.com/manifoldfinance"
+            <a
+              href="https://twitter.com/@foldfinance"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors">
-              <Twitter className="w-5 h-5" />
-            </Link>
-            <Link
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              <TwitterLogoIcon className="w-5 h-5" />
+            </a>
+            <a
               href="https://github.com/manifoldfinance"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors">
-              <Github className="w-5 h-5" />
-            </Link>
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              <GitHubLogoIcon className="w-5 h-5" />
+            </a>
           </div>
         </div>
         <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-800">
@@ -62,5 +71,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }
