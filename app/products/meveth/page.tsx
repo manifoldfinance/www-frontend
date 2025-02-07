@@ -1,6 +1,6 @@
-import { BackgroundPaths } from "@/app/components/background-paths";
-import { FeatureSection } from "@/app/components/feature-section";
-import { Coins, Shield, TrendingUp, Zap } from "lucide-react";
+import { BackgroundPaths } from "@/app/components/background-paths"
+import { FeatureSection } from "@/app/components/feature-section"
+import { Zap, TrendingUp, Shield, Coins } from "lucide-react"
 
 const mevETHFeatures = [
   {
@@ -23,7 +23,7 @@ const mevETHFeatures = [
     title: "Liquid Staking",
     description: "Receive mevETH tokens while your ETH is staked.",
   },
-];
+]
 
 export default function MevETHPage() {
   return (
@@ -62,5 +62,5 @@ export default function MevETHPage() {
         </section>
       </main>
     </div>
-  );
+  )
 }

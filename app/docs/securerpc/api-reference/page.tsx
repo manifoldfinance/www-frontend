@@ -1,3 +1,5 @@
+import { DocsNavigation } from "@/app/components/docs-navigation"
+
 export default function ApiReferencePage() {
   return (
     <div className="space-y-6">
@@ -14,7 +16,7 @@ export default function ApiReferencePage() {
             request headers:
           </p>
           <pre className="rounded-lg bg-muted p-4">
-            <code>{"X-API-Key: your_api_key"}</code>
+            <code>{`X-API-Key: your_api_key`}</code>
           </pre>
         </section>
 
@@ -22,7 +24,7 @@ export default function ApiReferencePage() {
           <h2 className="text-2xl font-semibold">Base URL</h2>
           <p>The base URL for all API endpoints is:</p>
           <pre className="rounded-lg bg-muted p-4">
-            <code>https://api.manifoldfinance.com/v1</code>
+            <code>https://api.securerpc.com/v1</code>
           </pre>
         </section>
 
@@ -35,7 +37,7 @@ export default function ApiReferencePage() {
               Get the current status of the SecureRPC service.
             </p>
             <pre className="rounded-lg bg-muted p-4 mt-4">
-              <code>{`curl -X GET "https://api.manifoldfinance.com/v1/status" \\
+              <code>{`curl -X GET "https://api.securerpc.com/v1" \\
   -H "X-API-Key: your_api_key"`}</code>
             </pre>
           </div>
@@ -44,7 +46,7 @@ export default function ApiReferencePage() {
             <h3 className="text-xl font-semibold">POST /eth/call</h3>
             <p className="text-muted-foreground mt-2">Make an Ethereum JSON-RPC call.</p>
             <pre className="rounded-lg bg-muted p-4 mt-4">
-              <code>{`curl -X POST "https://api.manifoldfinance.com/v1/eth/call" \\
+              <code>{`curl -X POST "https://api.securerpc.com/v1" \\
   -H "X-API-Key: your_api_key" \\
   -H "Content-Type: application/json" \\
   -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'`}</code>
@@ -52,6 +54,10 @@ export default function ApiReferencePage() {
           </div>
         </section>
       </div>
+      <DocsNavigation
+        prevPage={{ title: "MEV Strategies", href: "/docs/mev/mev-strategies" }}
+        nextPage={{ title: "Authentication", href: "/docs/securerpc/authentication" }}
+      />
     </div>
-  );
+  )
 }

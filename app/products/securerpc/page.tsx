@@ -1,6 +1,6 @@
-import { BackgroundPaths } from "@/app/components/background-paths";
-import { FeatureSection } from "@/app/components/feature-section";
-import { Lock, Server, Shield, Zap } from "lucide-react";
+import { BackgroundPaths } from "@/app/components/background-paths"
+import { FeatureSection } from "@/app/components/feature-section"
+import { Shield, Zap, Lock, Server } from "lucide-react"
 
 const secureRPCFeatures = [
   {
@@ -23,7 +23,7 @@ const secureRPCFeatures = [
     title: "Reliable Infrastructure",
     description: "Robust and scalable infrastructure for 24/7 availability.",
   },
-];
+]
 
 export default function SecureRPCPage() {
   return (
@@ -65,5 +65,5 @@ export default function SecureRPCPage() {
         </section>
       </main>
     </div>
-  );
+  )
 }

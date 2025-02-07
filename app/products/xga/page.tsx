@@ -1,6 +1,6 @@
-import { BackgroundPaths } from "@/app/components/background-paths";
-import { FeatureSection } from "@/app/components/feature-section";
-import { Globe, Link, Users, VoteIcon } from "lucide-react";
+import { BackgroundPaths } from "@/app/components/background-paths"
+import { FeatureSection } from "@/app/components/feature-section"
+import { Globe, Users, Link, VoteIcon } from "lucide-react"
 
 const xgaFeatures = [
   {
@@ -23,7 +23,7 @@ const xgaFeatures = [
     title: "Efficient Voting",
     description: "Streamlined voting process for quick and secure decisions.",
   },
-];
+]
 
 export default function XGAPage() {
   return (
@@ -65,5 +65,5 @@ export default function XGAPage() {
         </section>
       </main>
     </div>
-  );
+  )
 }

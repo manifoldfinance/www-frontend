@@ -7,11 +7,14 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["*.json"]
+    "ignore": ["*.json", ".next/*"]
   },
   "formatter": {
     "enabled": true,
-    "indentStyle": "space"
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
   },
   "organizeImports": {
     "enabled": true
@@ -19,17 +22,17 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "style": {
+        "noInferrableTypes": "off"
+      }
     }
   },
   "javascript": {
     "formatter": {
       "quoteStyle": "double",
-      "indentStyle": "space",
-      "bracketSameLine": true,
-      "lineWidth": 100,
       "trailingCommas": "all",
-      "semicolons": "always"
+      "semicolons": "asNeeded"
     }
   }
 }

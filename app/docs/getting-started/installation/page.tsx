@@ -1,4 +1,5 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { DocsNavigation } from "@/app/components/docs-navigation"
 
 export default function InstallationPage() {
   return (
@@ -39,10 +40,14 @@ export default function InstallationPage() {
         <pre className="rounded-lg bg-muted p-4 mt-2">
           <code>
             MANIFOLD_API_KEY=your_api_key{"\n"}
-            MANIFOLD_ENDPOINT=https://api.manifoldfinance.com
+            MANIFOLD_ENDPOINT=https://api.securerpc.com/v1
           </code>
         </pre>
       </div>
+      <DocsNavigation
+        prevPage={{ title: "Introduction", href: "/docs/getting-started/introduction" }}
+        nextPage={{ title: "Quick Start", href: "/docs/getting-started/quick-start" }}
+      />
     </div>
-  );
+  )
 }

@@ -1,62 +1,72 @@
-"use client";
+"use client"
 
-import { CaretDownIcon } from "@radix-ui/react-icons";
-import { Menu } from "lucide-react";
-import Link from "next/link";
-import * as React from "react";
+import type * as React from "react"
+import Link from "next/link"
+import { Menu } from "lucide-react"
 
-import { Logo } from "@/app/components/logo";
-import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils"
+import { Logo } from "@/app/components/logo"
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarTrigger,
-} from "@/components/ui/menubar";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { cn } from "@/lib/utils";
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+} from "@/components/ui/navigation-menu"
+import { ScrollArea } from "@/components/ui/scroll-area"
 
 const solutions: { title: string; href: string; description: string }[] = [
   {
-    title: "Hedging and Execution",
-    href: "/solutions/hedging-execution",
-    description: "Optimize your trading strategies with advanced hedging and execution tools.",
+    title: "High-Performance Staking",
+    href: "/solutions/staking",
+    description: "Build and manage efficient staking solutions for maximum returns.",
   },
   {
-    title: "MEV Relay and Protection",
-    href: "/solutions/mev-relay-protection",
-    description: "Safeguard your transactions and maximize value with our MEV protection services.",
+    title: "Secure Restaking",
+    href: "/solutions/restaking",
+    description: "Leverage restaking protocols while ensuring top-notch security.",
   },
   {
-    title: "AVS Operations",
-    href: "/solutions/avs-operations",
-    description: "Streamline your Autonomous Validation System operations for enhanced efficiency.",
+    title: "MEV Optimization",
+    href: "/solutions/mev",
+    description: "Maximize MEV earnings with our advanced strategies and tools.",
   },
   {
-    title: "Relay+ Protect",
-    href: "/solutions/relay-protect",
+    title: "MEV Protection+Relay",
+    href: "/solutions/mev-relay-protect",
     description: "Advanced MEV protection and transaction privacy for Ethereum.",
   },
-];
+]
 
 const products: { title: string; href: string; description: string }[] = [
-  ...solutions,
   {
-    title: "Captive Insurance",
-    href: "/products/captive-insurance",
-    description: "Tailored insurance solutions for blockchain and DeFi projects.",
+    title: "FOLD Staking",
+    href: "/products/fold-staking",
+    description: "Stake your FOLD tokens and earn rewards.",
   },
   {
-    title: "FOLD Token",
-    href: "/fold-token",
-    description: "Learn about our native ERC20 token powering the Manifold Finance ecosystem.",
+    title: "SecureRPC",
+    href: "/products/securerpc",
+    description: "Enterprise-grade RPC service for secure blockchain interactions.",
   },
-];
+  {
+    title: "XGA",
+    href: "https://xga.com",
+    description: "Cross-chain Governance Aggregator for decentralized decision-making.",
+  },
+  {
+    title: "mevETH",
+    href: "/products/meveth",
+    description: "Maximized MEV rewards for Ethereum staking.",
+  },
+]
 
 export function MainNav() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-[#1616b4] text-white">
+    <header className="sticky top-0 z-50 w-full border-b bg-black text-white">
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <Logo className="h-6 w-6" />
@@ -64,100 +74,129 @@ export function MainNav() {
         </Link>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <nav className="flex items-center space-x-6 text-sm font-medium">
-            <Menubar className="bg-transparent border-none">
-              <MenubarMenu>
-                <MenubarTrigger className="text-white hover:bg-[#c9b3f5] hover:bg-opacity-20">
-                  Solutions
-                </MenubarTrigger>
-                <MenubarContent className="bg-[#1616b4]">
-                  {solutions.map((item) => (
-                    <MenubarItem
-                      key={item.href}
-                      className="text-white hover:bg-[#c9b3f5] hover:bg-opacity-20">
-                      <Link href={item.href}>{item.title}</Link>
-                    </MenubarItem>
-                  ))}
-                </MenubarContent>
-              </MenubarMenu>
-              <MenubarMenu>
-                <MenubarTrigger className="text-white hover:bg-[#c9b3f5] hover:bg-opacity-20">
-                  Products
-                </MenubarTrigger>
-                <MenubarContent className="bg-[#1616b4]">
-                  {products.map((item) => (
-                    <MenubarItem
-                      key={item.href}
-                      className="text-white hover:bg-[#c9b3f5] hover:bg-opacity-20">
-                      <Link href={item.href}>{item.title}</Link>
-                    </MenubarItem>
-                  ))}
-                </MenubarContent>
-              </MenubarMenu>
-              <MenubarMenu>
-                <MenubarTrigger className="text-white hover:bg-[#c9b3f5] hover:bg-opacity-20">
-                  <Link href="/docs">Documentation</Link>
-                </MenubarTrigger>
-              </MenubarMenu>
-              <MenubarMenu>
-                <MenubarTrigger className="text-white hover:bg-[#c9b3f5] hover:bg-opacity-20">
-                  <Link href="/blog">Blog</Link>
-                </MenubarTrigger>
-              </MenubarMenu>
-            </Menubar>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                      {solutions.map((item) => (
+                        <li key={item.href}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              href={item.href}
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            >
+                              <div className="text-sm font-medium leading-none">{item.title}</div>
+                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                {item.description}
+                              </p>
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                      {products.map((item) => (
+                        <li key={item.href}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              href={item.href}
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            >
+                              <div className="text-sm font-medium leading-none">{item.title}</div>
+                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                {item.description}
+                              </p>
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/docs" legacyBehavior passHref>
+                    <NavigationMenuLink>Documentation</NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/blog" legacyBehavior passHref>
+                    <NavigationMenuLink>Blog</NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </nav>
         </div>
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-white">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Open menu</span>
+              <Button
+                variant="ghost"
+                className="px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+              >
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-[300px] bg-[#1616b4] text-white">
-              <nav className="flex flex-col space-y-4">
-                <Link href="/" className="text-lg font-semibold">
-                  Manifold Finance
-                </Link>
-                <MobileNavItem title="Solutions" items={solutions} />
-                <MobileNavItem title="Products" items={products} />
-                <Link href="/docs" className="py-2">
-                  Documentation
-                </Link>
-                <Link href="/blog" className="py-2">
-                  Blog
-                </Link>
-              </nav>
+            <SheetContent side="left" className="pr-0">
+              <MobileLink href="/" className="flex items-center" onOpenChange={() => {}}>
+                <Logo className="mr-2 h-4 w-4" />
+                <span className="font-bold">Manifold Finance</span>
+              </MobileLink>
+              <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
+                <div className="flex flex-col space-y-3">
+                  {solutions.map(
+                    (item) =>
+                      item.href && (
+                        <MobileLink key={item.href} href={item.href} onOpenChange={() => {}}>
+                          {item.title}
+                        </MobileLink>
+                      ),
+                  )}
+                </div>
+                <div className="flex flex-col space-y-2">
+                  {products.map(
+                    (item) =>
+                      item.href && (
+                        <MobileLink key={item.href} href={item.href} onOpenChange={() => {}}>
+                          {item.title}
+                        </MobileLink>
+                      ),
+                  )}
+                </div>
+              </ScrollArea>
             </SheetContent>
           </Sheet>
         </div>
       </div>
     </header>
-  );
+  )
 }
 
-function MobileNavItem({
-  title,
-  items,
-}: { title: string; items: { title: string; href: string }[] }) {
-  const [isOpen, setIsOpen] = React.useState(false);
+interface MobileLinkProps extends React.PropsWithChildren {
+  href: string
+  onOpenChange?: (open: boolean) => void
+  className?: string
+}
+
+function MobileLink({ href, onOpenChange, className, children, ...props }: MobileLinkProps) {
   return (
-    <div>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between py-2 text-left">
-        {title}
-        <CaretDownIcon className={cn("h-4 w-4 transition-transform", isOpen && "rotate-180")} />
-      </button>
-      {isOpen && (
-        <div className="pl-4 space-y-2">
-          {items.map((item) => (
-            <Link key={item.href} href={item.href} className="block py-2">
-              {item.title}
-            </Link>
-          ))}
-        </div>
-      )}
-    </div>
-  );
+    <Link
+      href={href}
+      onClick={() => {
+        onOpenChange?.(false)
+      }}
+      className={cn(className)}
+      {...props}
+    >
+      {children}
+    </Link>
+  )
 }

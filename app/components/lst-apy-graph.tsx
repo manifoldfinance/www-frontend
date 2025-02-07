@@ -1,18 +1,18 @@
-"use client";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+"use client"
 import {
-  CartesianGrid,
   Line,
   LineChart,
   ResponsiveContainer,
-  Tooltip,
   XAxis,
   YAxis,
-} from "recharts";
+  Tooltip,
+  CartesianGrid,
+} from "recharts"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface LSTData {
-  name: string;
-  apy: number;
+  name: string
+  apy: number
 }
 
 const lstData: LSTData[] = [
@@ -20,7 +20,7 @@ const lstData: LSTData[] = [
   { name: "stETH", apy: 4.8 },
   { name: "rETH", apy: 4.9 },
   { name: "oETH", apy: 5.0 },
-];
+]
 
 export function LSTAPYGraph() {
   return (
@@ -69,5 +69,5 @@ export function LSTAPYGraph() {
         </div>
       </CardContent>
     </Card>
-  );
+  )
 }

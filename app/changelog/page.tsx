@@ -1,26 +1,26 @@
-import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Badge } from "@/components/ui/badge"
+import { ArrowLeft, ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 interface ChangelogEntry {
-  date: string;
-  version: string;
-  platform: string;
-  title: string;
-  type: "public" | "beta" | "alpha";
-  changes: string[];
+  date: string
+  version: string
+  platform: string
+  title: string
+  type: "public" | "beta" | "alpha"
+  changes: string[]
   previousRelease?: {
-    date: string;
-    version: string;
-    platform: string;
-    type: "public" | "beta" | "alpha";
-  };
+    date: string
+    version: string
+    platform: string
+    type: "public" | "beta" | "alpha"
+  }
   nextRelease?: {
-    date: string;
-    version: string;
-    platform: string;
-    type: "public" | "beta" | "alpha";
-  };
+    date: string
+    version: string
+    platform: string
+    type: "public" | "beta" | "alpha"
+  }
 }
 
 const changelog: ChangelogEntry = {
@@ -46,7 +46,7 @@ const changelog: ChangelogEntry = {
     platform: "Mobile",
     type: "public",
   },
-};
+}
 
 function VersionBadge({ type }: { type: ChangelogEntry["type"] }) {
   return (
@@ -58,10 +58,11 @@ function VersionBadge({ type }: { type: ChangelogEntry["type"] }) {
           : type === "beta"
             ? "bg-yellow-500/10 text-yellow-500 hover:bg-yellow-500/20"
             : "bg-blue-500/10 text-blue-500 hover:bg-blue-500/20"
-      }>
+      }
+    >
       {type}
     </Badge>
-  );
+  )
 }
 
 function ReleaseNavigation({
@@ -71,16 +72,17 @@ function ReleaseNavigation({
   version,
   platform,
 }: {
-  type: "previous" | "next";
-  direction: "left" | "right";
-  date: string;
-  version: string;
-  platform: string;
+  type: "previous" | "next"
+  direction: "left" | "right"
+  date: string
+  version: string
+  platform: string
 }) {
   return (
     <Link
       href="#"
-      className="block p-6 rounded-lg border border-border bg-card hover:bg-accent transition-colors">
+      className="block p-6 rounded-lg border border-border bg-card hover:bg-accent transition-colors"
+    >
       <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
         {direction === "left" && <ArrowLeft className="w-4 h-4" />}
         {type === "previous" ? "Previous" : "Next"} release
@@ -93,7 +95,7 @@ function ReleaseNavigation({
         </div>
       </div>
     </Link>
-  );
+  )
 }
 
 export default function ChangelogPage() {
@@ -157,5 +159,5 @@ export default function ChangelogPage() {
         </article>
       </div>
     </div>
-  );
+  )
 }
