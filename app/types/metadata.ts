@@ -11,7 +11,7 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: "Manifold Finance",
-  description: "Optimized Infrastructure for the Next Generation of Ethereum",
+  description: "Powering Markets across Networks",
   url: "https://manifoldfinance.com",
   ogImage: "https://manifoldfinance.com/og.jpg",
   links: {

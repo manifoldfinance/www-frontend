@@ -16,14 +16,14 @@ interface LSTTrendData {
   mevETH: number
   stETH: number
   rETH: number
-  oETH: number
+  cETH: number
 }
 
 const lstTrendData: LSTTrendData[] = [
-  { quarter: "Q1 2024", mevETH: 5.0, stETH: 4.8, rETH: 4.9, oETH: 5.0 },
-  { quarter: "Q2 2024", mevETH: 5.2, stETH: 4.7, rETH: 4.8, oETH: 4.9 },
-  { quarter: "Q3 2024", mevETH: 5.4, stETH: 4.6, rETH: 4.7, oETH: 4.8 },
-  { quarter: "Q4 2024", mevETH: 5.6, stETH: 4.5, rETH: 4.6, oETH: 4.7 },
+  { quarter: "Q1 2024", mevETH: 4.3, stETH: 3.6, rETH: 3.0, cETH: 3.7},
+  { quarter: "Q2 2024", mevETH: 4.2, stETH: 3.4, rETH: 3.1, cETH: 3.7 },
+  { quarter: "Q3 2024", mevETH: 4.4, stETH: 3.1, rETH: 3.0, cETH: 3.3 },
+  { quarter: "Q4 2024", mevETH: 4.6, stETH: 3.1, rETH: 2.8, cETH: 3.4 },
 ]
 
 export function LSTAPYTrendGraph() {

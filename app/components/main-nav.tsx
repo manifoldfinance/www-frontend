@@ -25,7 +25,7 @@ const solutions: { title: string; href: string; description: string }[] = [
     description: "Build and manage efficient staking solutions for maximum returns.",
   },
   {
-    title: "Secure Restaking",
+    title: "Native Restaking",
     href: "/solutions/restaking",
     description: "Leverage restaking protocols while ensuring top-notch security.",
   },
