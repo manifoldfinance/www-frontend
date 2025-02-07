@@ -8,7 +8,8 @@ export default function DocsPage() {
       <h1 className="text-3xl font-bold">Documentation</h1>
       <p className="text-muted-foreground text-lg">
         Welcome to the Manifold Finance documentation. This guide is under construction, so feel
-        free to ask questions on our forums!
+        free to ask questions on our...  <br/>
+        <a href="https://forums.manifoldfinance.com">Forums</a>
       </p>
 
       <div className="grid gap-6 md:grid-cols-2">
@@ -16,7 +17,7 @@ export default function DocsPage() {
           <CardHeader>
             <CardTitle>Getting Started</CardTitle>
             <CardDescription>
-              Learn the basics of Manifold Finance and get started with our solutions.
+              Learn the basics of Ethereum and Web3 to get started with our solutions.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -50,7 +51,7 @@ export default function DocsPage() {
           <CardHeader>
             <CardTitle>Staking</CardTitle>
             <CardDescription>
-              Learn about our high-yield staking solutions and how to maximize your returns.
+              Learn about our high-yield liquid ethereum staking solutions and how to maximize your returns.
             </CardDescription>
           </CardHeader>
           <CardContent>

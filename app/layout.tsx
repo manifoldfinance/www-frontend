@@ -54,7 +54,7 @@ export const metadata: Metadata = {
         url: "https://manifoldfinance.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Manifold Finance - Optimized Ethereum Infrastructure",
+        alt: "Manifold Finance - Powering Markets across Networks",
       },
     ],
   },
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     title: "Manifold Finance - Powering Markets across Networks",
     description: "Unifying networks and markets together",
     images: ["https://manifoldfinance.com/og-image.jpg"],
-    creator: "@manifoldfinance",
+    creator: "@foldfinance",
   },
   icons: {
     icon: "/favicon.ico",

@@ -1,13 +1,14 @@
 {
   "name": "manifoldfinance-dot-com",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "check": "npx tsc --strict --noEmit"
+    "check": "ANALYZE=true npx tsc --strict --noEmit",
+    "profile": "ANALYZE=true npx next build --profile"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",

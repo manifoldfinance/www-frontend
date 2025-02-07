@@ -20,7 +20,7 @@ export default function Error({
       <div className="w-full max-w-4xl bg-gray-900 border-2 border-green-500 p-8 rounded-lg shadow-lg">
         <h1 className="text-3xl font-bold mb-4">EVM EXECUTION ERROR</h1>
         <div className="mb-6 text-xl">
-          <p>SMART CONTRACT EXECUTION FAILED</p>
+          <p>??? WARNING EXECUTION FAILED</p>
           <p className="mt-2">
             ERROR CODE: 0x
             {Math.floor(Math.random() * 16777215)
