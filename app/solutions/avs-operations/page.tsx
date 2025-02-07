@@ -1,4 +1,4 @@
-import { BackgroundPaths } from "../../components/background-paths";
+import { BackgroundPaths } from "../../components/background-paths"
 
 export default function AvsOperationsPage() {
   return (
@@ -16,5 +16,5 @@ export default function AvsOperationsPage() {
         {/* Add more content here */}
       </main>
     </div>
-  );
+  )
 }

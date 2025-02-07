@@ -1,5 +1,5 @@
-import { BackgroundPaths } from "../components/background-paths";
-import { FeatureGrid } from "../components/feature-grid";
+import { BackgroundPaths } from "../components/background-paths"
+import { FeatureGrid } from "../components/feature-grid"
 
 export default function SolutionsPage() {
   return (
@@ -13,5 +13,5 @@ export default function SolutionsPage() {
         <FeatureGrid />
       </main>
     </div>
-  );
+  )
 }

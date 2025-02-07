@@ -1,24 +1,25 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { motion } from "framer-motion"
+import Link from "next/link"
+import { cn } from "@/lib/utils"
+import { buttonVariants } from "@/components/ui/button"
 
 interface BackgroundPathsProps {
-  title: string;
-  subtitle?: string;
+  title: string
+  subtitle?: string
   primaryCta?: {
-    href: string;
-    text: string;
-    variant: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
-    className?: string;
-  };
+    href: string
+    text: string
+    variant: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link"
+    className?: string
+  }
   secondaryCta?: {
-    href: string;
-    text: string;
-    variant: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
-    className?: string;
-  };
+    href: string
+    text: string
+    variant: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link"
+    className?: string
+  }
 }
 
 function FloatingPaths({ position }: { position: number }) {
@@ -31,7 +32,7 @@ function FloatingPaths({ position }: { position: number }) {
     } ${1600 + i * 20 * position} ${1600 - i * 25} ${1600 + i * 20 * position} ${1600 - i * 25}`,
     color: `rgba(124,228,108,${0.02 + i * 0.015})`,
     width: 0.5 + i * 0.05,
-  }));
+  }))
 
   return (
     <div className="absolute inset-0 pointer-events-none">
@@ -41,7 +42,7 @@ function FloatingPaths({ position }: { position: number }) {
           <motion.path
             key={path.id}
             d={path.d}
-            stroke="currentColor"
+            stroke={`rgba(255,255,255,${0.05 + path.id * 0.01})`}
             strokeWidth={path.width}
             strokeOpacity={0.1 + path.id * 0.015}
             initial={{ pathLength: 0.3, opacity: 0.6 }}
@@ -59,7 +60,7 @@ function FloatingPaths({ position }: { position: number }) {
         ))}
       </svg>
     </div>
-  );
+  )
 }
 
 export function BackgroundPaths({
@@ -68,11 +69,11 @@ export function BackgroundPaths({
   primaryCta,
   secondaryCta,
 }: BackgroundPathsProps) {
-  const [mainText, cursor] = title.split("|");
-  const words = mainText.split(" ");
+  const [mainText, cursor] = title.split("|")
+  const words = mainText.split(" ")
 
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-blackA12">
+    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-background">
       <div className="absolute inset-0">
         <FloatingPaths position={1} />
         <FloatingPaths position={-1} />
@@ -85,7 +86,8 @@ export function BackgroundPaths({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2 }}
-          className="max-w-4xl mx-auto space-y-6">
+          className="max-w-4xl mx-auto space-y-6"
+        >
           <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter font-heading">
             {words.map((word, wordIndex) => (
               <span key={wordIndex} className="inline-block mr-4 last:mr-0">
@@ -100,7 +102,8 @@ export function BackgroundPaths({
                       stiffness: 150,
                       damping: 25,
                     }}
-                    className="inline-block text-white">
+                    className="inline-block text-white"
+                  >
                     {letter}
                   </motion.span>
                 ))}
@@ -115,7 +118,8 @@ export function BackgroundPaths({
                   repeat: Number.POSITIVE_INFINITY,
                   ease: "linear",
                 }}
-                className="inline-block text-green9 ml-2">
+                className="inline-block text-green9 ml-2"
+              >
                 |
               </motion.span>
             )}
@@ -126,7 +130,8 @@ export function BackgroundPaths({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 1 }}
-              className="text-lg sm:text-xl md:text-2xl text-whiteA11">
+              className="text-lg sm:text-xl md:text-2xl text-whiteA11"
+            >
               {subtitle}
             </motion.p>
           )}
@@ -136,19 +141,32 @@ export function BackgroundPaths({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.5, duration: 1 }}
-              className="flex flex-wrap items-center justify-center gap-4 mt-8">
+              className="flex flex-wrap items-center justify-center gap-4 mt-8"
+            >
               {primaryCta && (
                 <Link href={primaryCta.href}>
-                  <Button variant={primaryCta.variant} className={primaryCta.className}>
+                  <button
+                    className={cn(
+                      buttonVariants({ variant: "secondary" }),
+                      "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+                      primaryCta.className,
+                    )}
+                  >
                     {primaryCta.text}
-                  </Button>
+                  </button>
                 </Link>
               )}
               {secondaryCta && (
                 <Link href={secondaryCta.href}>
-                  <Button variant={secondaryCta.variant} className={secondaryCta.className}>
+                  <button
+                    className={cn(
+                      buttonVariants({ variant: "outline" }),
+                      "border-white/10 bg-background text-white hover:bg-accent hover:text-accent-foreground",
+                      secondaryCta.className,
+                    )}
+                  >
                     {secondaryCta.text}
-                  </Button>
+                  </button>
                 </Link>
               )}
             </motion.div>
@@ -156,5 +174,5 @@ export function BackgroundPaths({
         </motion.div>
       </div>
     </div>
-  );
+  )
 }

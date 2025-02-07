@@ -1,4 +1,4 @@
-import { BackgroundPaths } from "../components/background-paths";
+import { BackgroundPaths } from "../components/background-paths"
 
 export default function TechnologyPage() {
   return (
@@ -31,5 +31,5 @@ export default function TechnologyPage() {
         </div>
       </main>
     </div>
-  );
+  )
 }

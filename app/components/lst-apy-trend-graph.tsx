@@ -1,22 +1,22 @@
-"use client";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+"use client"
 import {
-  CartesianGrid,
-  Legend,
   Line,
   LineChart,
   ResponsiveContainer,
-  Tooltip,
   XAxis,
   YAxis,
-} from "recharts";
+  Tooltip,
+  CartesianGrid,
+  Legend,
+} from "recharts"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface LSTTrendData {
-  quarter: string;
-  mevETH: number;
-  stETH: number;
-  rETH: number;
-  oETH: number;
+  quarter: string
+  mevETH: number
+  stETH: number
+  rETH: number
+  oETH: number
 }
 
 const lstTrendData: LSTTrendData[] = [
@@ -24,7 +24,7 @@ const lstTrendData: LSTTrendData[] = [
   { quarter: "Q2 2024", mevETH: 5.2, stETH: 4.7, rETH: 4.8, oETH: 4.9 },
   { quarter: "Q3 2024", mevETH: 5.4, stETH: 4.6, rETH: 4.7, oETH: 4.8 },
   { quarter: "Q4 2024", mevETH: 5.6, stETH: 4.5, rETH: 4.6, oETH: 4.7 },
-];
+]
 
 export function LSTAPYTrendGraph() {
   return (
@@ -92,5 +92,5 @@ export function LSTAPYTrendGraph() {
         </div>
       </CardContent>
     </Card>
-  );
+  )
 }

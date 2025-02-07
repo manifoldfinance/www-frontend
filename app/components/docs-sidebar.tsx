@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { cn } from "@/lib/utils"
+import { ScrollArea } from "@/components/ui/scroll-area"
 
 interface DocLink {
-  title: string;
-  href: string;
-  items?: { title: string; href: string }[];
+  title: string
+  href: string
+  items?: { title: string; href: string }[]
 }
 
 const docs: DocLink[] = [
@@ -52,10 +52,10 @@ const docs: DocLink[] = [
     title: "FAQ",
     href: "/docs/faq",
   },
-];
+]
 
 export function DocsSidebar() {
-  const pathname = usePathname();
+  const pathname = usePathname()
 
   return (
     <ScrollArea className="h-full py-6 pl-4">
@@ -72,7 +72,8 @@ export function DocsSidebar() {
                     pathname === section.href
                       ? "text-primary font-semibold"
                       : "text-muted-foreground hover:text-primary",
-                  )}>
+                  )}
+                >
                   {section.title}
                 </Link>
                 {section.items?.map((item) => (
@@ -84,7 +85,8 @@ export function DocsSidebar() {
                       pathname === item.href
                         ? "text-primary font-medium"
                         : "text-muted-foreground hover:text-primary",
-                    )}>
+                    )}
+                  >
                     {item.title}
                   </Link>
                 ))}
@@ -94,5 +96,5 @@ export function DocsSidebar() {
         </div>
       </div>
     </ScrollArea>
-  );
+  )
 }

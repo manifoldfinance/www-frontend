@@ -1,4 +1,4 @@
-import { BackgroundPaths } from "../../components/background-paths";
+import { BackgroundPaths } from "../../components/background-paths"
 
 export default function CaptiveInsurancePage() {
   return (
@@ -62,5 +62,5 @@ export default function CaptiveInsurancePage() {
         </div>
       </main>
     </div>
-  );
+  )
 }

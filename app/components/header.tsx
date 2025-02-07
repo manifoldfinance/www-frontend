@@ -1,7 +1,9 @@
-"use client";
+"use client"
 
-import { Logo } from "@/app/components/logo";
-import { Button } from "@/components/ui/button";
+import * as React from "react"
+import Link from "next/link"
+import { Logo } from "@/app/components/logo"
+import { cn } from "@/lib/utils"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,35 +12,32 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
-import { Menu } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import * as React from "react";
+} from "@/components/ui/navigation-menu"
+import { Button } from "@/components/ui/button"
+import { HamburgerMenuIcon } from "@radix-ui/react-icons"
 
 const solutions: { title: string; href: string; description: string }[] = [
   {
-    title: "High-Yield Staking",
+    title: "High-Performance Staking",
     href: "/solutions/staking",
-    description: "Maximum returns, natively.",
+    description: "+4.7% APY makes us the most efficient staking solution for maximum returns.",
   },
   {
-    title: "AVS Restaking",
+    title: "Secure Restaking",
     href: "/solutions/restaking",
-    description: "AVS Operations",
+    description: "Leverage restaking protocols while ensuring zero loss to capital.",
   },
   {
-    title: "MEV Relay",
+    title: "MEV Optimization",
     href: "/solutions/mev",
-    description: "Maximize MEV earnings as a Validator. Protect yourself as a user.",
+    description: "Maximize MEV earnings with our advanced integrations and tools.",
   },
   {
-    title: "Enterprise SecureRPC",
-    href: "/solutions/securerpc",
-    description: "MEV Protection and RPC as a Service",
+    title: "MEV Relay+Protect",
+    href: "/solutions/mev-relay-protect",
+    description: "Prevent MEV extraction for any protocol/transaction seamlessly.",
   },
-];
+]
 
 const products: { title: string; href: string; description: string }[] = [
   {
@@ -49,26 +48,21 @@ const products: { title: string; href: string; description: string }[] = [
   {
     title: "SecureRPC",
     href: "/products/securerpc",
-    description: "MEV Protection as a Service",
+    description: "Censorship resistant RPC service for uncompromised blockchain access.",
   },
   {
     title: "XGA",
     href: "https://xga.com",
-    description: "Hello World Auction.",
+    description: "eXtensible Gas Auctions",
   },
   {
     title: "mevETH",
     href: "/products/meveth",
     description: "Maximized MEV rewards for Ethereum staking.",
   },
-];
+]
 
 const resources: { title: string; href: string; description: string }[] = [
-  {
-    title: "Documentation",
-    href: "/docs",
-    description: "Learn how to integrate and leverage our solutions effectively.",
-  },
   {
     title: "Blog",
     href: "/blog",
@@ -84,7 +78,12 @@ const resources: { title: string; href: string; description: string }[] = [
     href: "/support",
     description: "Get help from our team and community.",
   },
-];
+  {
+    title: "Forums",
+    href: "https://forums.manifoldfinance.com",
+    description: "Join the community discussion and get help from other users.",
+  },
+]
 
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
   ({ className, title, children, ...props }, ref) => {
@@ -97,32 +96,40 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWit
               "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
               className,
             )}
-            {...props}>
+            {...props}
+          >
             <div className="text-sm font-medium leading-none">{title}</div>
             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
           </a>
         </NavigationMenuLink>
       </li>
-    );
+    )
   },
-);
-ListItem.displayName = "ListItem";
+)
+ListItem.displayName = "ListItem"
 
+/**
+ * Mobile menu for the header
+ * @returns
+ *
+ *
+ *
+ */
 function MobileMenu() {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false)
 
   return (
     <div className="md:hidden">
       <Button variant="ghost" size="sm" className="text-base" onClick={() => setIsOpen(!isOpen)}>
-        <Menu className="h-5 w-5" />
+        <HamburgerMenuIcon className="h-5 w-5" />
       </Button>
       {isOpen && (
         <div className="absolute top-16 left-0 w-full bg-background border-b border-border p-4">
           <nav className="flex flex-col space-y-4">
-            <Link href="/solutions" className="text-sm font-medium">
-              Solutions
+            <Link href="/solutions/staking" className="text-sm font-medium">
+              Staking
             </Link>
-            <Link href="/products" className="text-sm font-medium">
+            <Link href="/products/overview" className="text-sm font-medium">
               Products
             </Link>
             <Link href="/docs" className="text-sm font-medium">
@@ -135,16 +142,24 @@ function MobileMenu() {
         </div>
       )}
     </div>
-  );
+  )
 }
 
+/**
+ *
+ *
+ * Desktop menu for the header
+ * @returns
+ *
+ *
+ */
 export function Header() {
   return (
-    <header className="fixed top-0 w-full z-50 bg-background border-b border-border">
+    <header className="fixed top-0 w-full z-50 bg-background border-b border-gray-800">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center">
-            <Logo className="h-8 w-8 md:h-10 md:w-10" />
+            <Logo />
           </Link>
           <div className="flex items-center space-x-4">
             <NavigationMenu className="hidden md:block">
@@ -158,20 +173,14 @@ export function Header() {
                       <NavigationMenuLink asChild>
                         <a
                           className="flex flex-col justify-between h-full select-none rounded-l-md bg-gradient-to-br from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                          href="/solutions/staking">
+                          href="/solutions/staking"
+                        >
                           <div>
-                            <Image
-                              src="/eth_frame.svg"
-                              alt="Ethereum Logo"
-                              width={38}
-                              height={38}
-                              className="mb-3"
-                            />
                             <div className="text-lg font-medium text-foreground mb-2">
-                              High Yield Staking
+                              High-Performance Staking
                             </div>
                             <p className="text-sm text-muted-foreground">
-                              +4.5% Without any Restaking
+                              Build and manage efficient staking solutions for maximum returns.
                             </p>
                           </div>
                           <div className="text-sm font-medium text-primary mt-4">Learn more →</div>
@@ -182,7 +191,8 @@ export function Header() {
                           <ListItem
                             key={solution.title}
                             title={solution.title}
-                            href={solution.href}>
+                            href={solution.href}
+                          >
                             {solution.description}
                           </ListItem>
                         ))}
@@ -232,5 +242,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  );
+  )
 }

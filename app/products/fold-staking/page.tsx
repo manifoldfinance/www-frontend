@@ -1,6 +1,6 @@
-import { BackgroundPaths } from "@/app/components/background-paths";
-import { FeatureSection } from "@/app/components/feature-section";
-import { BarChart, Coins, Lock, Zap } from "lucide-react";
+import { BackgroundPaths } from "@/app/components/background-paths"
+import { FeatureSection } from "@/app/components/feature-section"
+import { Coins, Lock, BarChart, Zap } from "lucide-react"
 
 const foldStakingFeatures = [
   {
@@ -23,7 +23,7 @@ const foldStakingFeatures = [
     title: "Quick Withdrawals",
     description: "Flexible withdrawal options with minimal waiting periods.",
   },
-];
+]
 
 export default function FoldStakingPage() {
   return (
@@ -65,5 +65,5 @@ export default function FoldStakingPage() {
         </section>
       </main>
     </div>
-  );
+  )
 }

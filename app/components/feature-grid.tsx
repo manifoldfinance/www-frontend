@@ -1,5 +1,5 @@
-import { DollarSign, Shield, Zap } from "lucide-react";
-import type React from "react";
+import type React from "react"
+import { Zap, Shield, DollarSign } from "lucide-react"
 
 export function FeatureGrid() {
   return (
@@ -27,7 +27,7 @@ export function FeatureGrid() {
         />
       </div>
     </div>
-  );
+  )
 }
 
 function FeatureCard({
@@ -43,5 +43,5 @@ function FeatureCard({
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
       <p className="text-gray-400 text-sm">{description}</p>
     </div>
-  );
+  )
 }

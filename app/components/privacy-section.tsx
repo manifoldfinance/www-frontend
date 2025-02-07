@@ -1,4 +1,4 @@
-import { Shield } from "lucide-react";
+import { Shield } from "lucide-react"
 
 export function PrivacySection() {
   return (
@@ -13,5 +13,5 @@ export function PrivacySection() {
         transactions remain protected.
       </p>
     </div>
-  );
+  )
 }

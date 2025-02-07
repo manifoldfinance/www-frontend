@@ -1,9 +1,34 @@
-import { Breadcrumb } from "@/app/components/breadcrumb";
-import { DocsSidebar } from "@/app/components/docs-sidebar";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import type React from "react"; // Added import for React
+"use client"
+import { usePathname } from "next/navigation"
+import { DocsSidebar } from "@/app/components/docs-sidebar"
+import { Breadcrumb } from "@/app/components/breadcrumb"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { DocsNavigation } from "@/app/components/docs-navigation"
+import type React from "react"
+
+const docsPages = [
+  { title: "Introduction", href: "/docs/getting-started/introduction" },
+  { title: "Installation", href: "/docs/getting-started/installation" },
+  { title: "Quick Start", href: "/docs/getting-started/quick-start" },
+  { title: "Staking Overview", href: "/docs/staking/overview" },
+  { title: "Validator Setup", href: "/docs/staking/validator-setup" },
+  { title: "Advanced Configuration", href: "/docs/staking/advanced-configuration" },
+  { title: "Understanding MEV", href: "/docs/mev/understanding-mev" },
+  { title: "MEV Protection", href: "/docs/mev/mev-protection" },
+  { title: "MEV Strategies", href: "/docs/mev/mev-strategies" },
+  { title: "API Reference", href: "/docs/securerpc/api-reference" },
+  { title: "Authentication", href: "/docs/securerpc/authentication" },
+  { title: "Rate Limiting", href: "/docs/securerpc/rate-limiting" },
+  { title: "FAQ", href: "/docs/faq" },
+]
 
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname()
+  const currentPageIndex = docsPages.findIndex((page) => page.href === pathname)
+  const prevPage = currentPageIndex > 0 ? docsPages[currentPageIndex - 1] : undefined
+  const nextPage =
+    currentPageIndex < docsPages.length - 1 ? docsPages[currentPageIndex + 1] : undefined
+
   return (
     <div className="flex min-h-screen">
       {/* Sidebar */}
@@ -17,9 +42,10 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
           <div className="container max-w-3xl mx-auto py-10 px-4">
             <Breadcrumb />
             {children}
+            <DocsNavigation prevPage={prevPage} nextPage={nextPage} />
           </div>
         </ScrollArea>
       </div>
     </div>
-  );
+  )
 }

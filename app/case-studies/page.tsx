@@ -1,4 +1,4 @@
-import { BackgroundPaths } from "../components/background-paths";
+import { BackgroundPaths } from "../components/background-paths"
 
 export default function CaseStudiesPage() {
   return (
@@ -26,5 +26,5 @@ export default function CaseStudiesPage() {
         </div>
       </main>
     </div>
-  );
+  )
 }
