@@ -1,5 +1,3 @@
-"use client";
-
 import { Space_Grotesk, Noto_Sans } from "next/font/google"
 import ErrorBoundary from "./components/error-boundary"
 import "./globals.css"
