@@ -39,7 +39,7 @@ export default function DocsPage() {
           </CardHeader>
           <CardContent>
             <Link
-              href="/docs/securerpc/api-reference"
+              href="https://securerpc.com"
               className="text-primary hover:underline inline-flex items-center"
             >
               Read more <ArrowRight className="ml-1 h-4 w-4" />
