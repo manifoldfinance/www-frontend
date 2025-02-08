@@ -8,17 +8,12 @@ import type React from "react"
 
 const docsPages = [
   { title: "Introduction", href: "/docs/getting-started/introduction" },
-  { title: "Installation", href: "/docs/getting-started/installation" },
   { title: "Quick Start", href: "/docs/getting-started/quick-start" },
   { title: "Staking Overview", href: "/docs/staking/overview" },
   { title: "Validator Setup", href: "/docs/staking/validator-setup" },
-  { title: "Advanced Configuration", href: "/docs/staking/advanced-configuration" },
   { title: "Understanding MEV", href: "/docs/mev/understanding-mev" },
   { title: "MEV Protection", href: "/docs/mev/mev-protection" },
   { title: "MEV Strategies", href: "/docs/mev/mev-strategies" },
-  { title: "API Reference", href: "/docs/securerpc/api-reference" },
-  { title: "Authentication", href: "/docs/securerpc/authentication" },
-  { title: "Rate Limiting", href: "/docs/securerpc/rate-limiting" },
   { title: "FAQ", href: "/docs/faq" },
 ]
 

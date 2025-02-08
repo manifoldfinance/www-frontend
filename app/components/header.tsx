@@ -47,7 +47,7 @@ const products: { title: string; href: string; description: string }[] = [
   },
   {
     title: "SecureRPC",
-    href: "/products/securerpc",
+    href: "https://securerpc.com",
     description: "Censorship resistant RPC service for uncompromised blockchain access.",
   },
   {
