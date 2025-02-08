@@ -71,7 +71,8 @@ const resources: { title: string; href: string; description: string }[] = [
   {
     title: "Telegram",
     href: "https://t.me/manifoldfinance",
-    description: "Join our community and stay up to date with our latest features and improvements.",
+    description:
+      "Join our community and stay up to date with our latest features and improvements.",
   },
   {
     title: "GitHub",

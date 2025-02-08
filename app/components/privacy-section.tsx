@@ -8,19 +8,14 @@ export function PrivacySection() {
         <h3 className="text-xl font-semibold">Privacy and Security</h3>
       </div>
       <div className="text-gray-400 prose prose-sm dark:prose-invert">
-        <p>
-          At Manifold Finance, we prioritize the privacy and security of our
-          users.
-        </p>
+        <p>At Manifold Finance, we prioritize the privacy and security of our users.</p>
         <h1>Understanding Privacy vs. Confidentiality: A Legal and Technical Perspective</h1>
 
         <p>
-          Privacy and confidentiality, though often used interchangeably, have
-          distinct legal implications that significantly impact how we protect
-          personal data. As legal scholar Ian Grigg notes in his seminal paper
-          on Ricardian Contracts, "The contract is a meeting of the minds...
-          [it] demands that intention must be shown and all terms must be
-          agreed"[^1].
+          Privacy and confidentiality, though often used interchangeably, have distinct legal
+          implications that significantly impact how we protect personal data. As legal scholar Ian
+          Grigg notes in his seminal paper on Ricardian Contracts, "The contract is a meeting of the
+          minds... [it] demands that intention must be shown and all terms must be agreed"[^1].
         </p>
 
         <h2>Key Legal Definitions</h2>
@@ -58,10 +53,7 @@ export function PrivacySection() {
 
         <h2>Surveillance Law Framework</h2>
 
-        <p>
-          The distinction between content and metadata creates two tiers of
-          protection:
-        </p>
+        <p>The distinction between content and metadata creates two tiers of protection:</p>
 
         <table>
           <thead>
@@ -89,11 +81,10 @@ export function PrivacySection() {
         </table>
 
         <p>
-          Chain-link confidentiality, introduced by Houman Shadab in 2012,
-          provides a framework for protecting personal data rights through
-          contractual law[^2]. This approach recognizes that while complete
-          privacy may be impractical, we can create meaningful protections
-          through carefully structured agreements.
+          Chain-link confidentiality, introduced by Houman Shadab in 2012, provides a framework for
+          protecting personal data rights through contractual law[^2]. This approach recognizes that
+          while complete privacy may be impractical, we can create meaningful protections through
+          carefully structured agreements.
         </p>
 
         <h2>Privacy Protection Hierarchy</h2>
@@ -121,17 +112,14 @@ export function PrivacySection() {
 
         <blockquote>
           <p>
-            "The distinction between content and metadata has become
-            increasingly blurred in the digital age, yet our legal frameworks
-            continue to treat them differently"[^3]
+            "The distinction between content and metadata has become increasingly blurred in the
+            digital age, yet our legal frameworks continue to treat them differently"[^3]
           </p>
         </blockquote>
 
         <h2>Practical Implementation Strategy</h2>
 
-        <p>
-          Rather than pursuing absolute privacy, modern systems should focus on:
-        </p>
+        <p>Rather than pursuing absolute privacy, modern systems should focus on:</p>
 
         <ol>
           <li>Protecting against exploitation of correlatable identifiers</li>
@@ -176,11 +164,10 @@ export function PrivacySection() {
         <h2>Conclusion</h2>
 
         <p>
-          Understanding these distinctions becomes essential for creating
-          effective privacy-preserving solutions that balance practical needs
-          with individual rights. As we continue to build digital systems, the
-          focus should shift from absolute privacy to practical protection
-          against exploitation.
+          Understanding these distinctions becomes essential for creating effective
+          privacy-preserving solutions that balance practical needs with individual rights. As we
+          continue to build digital systems, the focus should shift from absolute privacy to
+          practical protection against exploitation.
         </p>
 
         <p>
@@ -196,19 +183,16 @@ export function PrivacySection() {
           </a>
         </p>
         <p>
-          [^3]: Project On Government Oversight. (2019). "The History and
-          Future of Mass Metadata Surveillance." Retrieved from{" "}
+          [^3]: Project On Government Oversight. (2019). "The History and Future of Mass Metadata
+          Surveillance." Retrieved from{" "}
           <a href="https://www.pogo.org/analysis/2019/06/the-history-and-future-of-mass-metadata-surveillance/">
             https://www.pogo.org/analysis/2019/06/the-history-and-future-of-mass-metadata-surveillance/
           </a>
         </p>
         <p>
-          <em>
-            Note: Not legal advice. This is for educational purposes only.
-          </em>
+          <em>Note: Not legal advice. This is for educational purposes only.</em>
         </p>
       </div>
     </div>
   )
 }
-

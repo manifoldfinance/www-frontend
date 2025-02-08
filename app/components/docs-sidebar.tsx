@@ -42,8 +42,7 @@ const docs: DocLink[] = [
   {
     title: "SecureRPC",
     href: "https://securerpc.com",
-    items: [
-    ],
+    items: [],
   },
   {
     title: "FAQ",

@@ -5,8 +5,8 @@ export default function IntroductionPage() {
     <div className="space-y-6">
       <h1 className="text-3xl font-bold">Introduction</h1>
       <p className="text-lg text-muted-foreground">
-        Manifold Finance provides Powering Markets across Networks,
-        offering high-performance staking, MEV optimization, and enterprise-grade SecureRPC.
+        Manifold Finance provides Powering Markets across Networks, offering high-performance
+        staking, MEV optimization, and enterprise-grade SecureRPC.
       </p>
 
       <div className="space-y-4">
