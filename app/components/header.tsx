@@ -33,7 +33,7 @@ const solutions: { title: string; href: string; description: string }[] = [
     description: "Maximize MEV earnings with our advanced integrations and tools.",
   },
   {
-    title: "MEV Relay+Protect",
+    title: "Relay + Protect",
     href: "/solutions/mev-relay-protect",
     description: "Prevent MEV extraction for any protocol/transaction seamlessly.",
   },
@@ -41,13 +41,13 @@ const solutions: { title: string; href: string; description: string }[] = [
 
 const products: { title: string; href: string; description: string }[] = [
   {
-    title: "FOLD Staking",
+    title: "FOLD Token",
     href: "/products/fold-staking",
     description: "Stake your FOLD tokens and earn rewards.",
   },
   {
     title: "SecureRPC",
-    href: "/products/securerpc",
+    href: "https://securerpc.com",
     description: "Censorship resistant RPC service for uncompromised blockchain access.",
   },
   {
@@ -69,14 +69,15 @@ const resources: { title: string; href: string; description: string }[] = [
     description: "Insights and updates from the Manifold Finance team.",
   },
   {
-    title: "Changelog",
-    href: "/changelog",
-    description: "Stay up to date with our latest features and improvements.",
+    title: "Telegram",
+    href: "https://t.me/manifoldfinance",
+    description:
+      "Join our community and stay up to date with our latest features and improvements.",
   },
   {
-    title: "Support",
-    href: "/support",
-    description: "Get help from our team and community.",
+    title: "GitHub",
+    href: "https://github.com/manifoldfinance",
+    description: "Contribute to our open source projects.",
   },
   {
     title: "Forums",

@@ -41,12 +41,8 @@ const docs: DocLink[] = [
   },
   {
     title: "SecureRPC",
-    href: "/docs/securerpc",
-    items: [
-      { title: "API Reference", href: "/docs/securerpc/api-reference" },
-      { title: "Authentication", href: "/docs/securerpc/authentication" },
-      { title: "Rate Limiting", href: "/docs/securerpc/rate-limiting" },
-    ],
+    href: "https://securerpc.com",
+    items: [],
   },
   {
     title: "FAQ",

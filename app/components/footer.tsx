@@ -19,7 +19,7 @@ export function Footer() {
           <div className="mb-4 md:mb-0">
             <nav>
               <ul className="flex flex-wrap justify-center md:justify-start space-x-4 md:space-x-6">
-      {/*          {sitemapLinks.map((link) => (
+                {/*          {sitemapLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
@@ -30,7 +30,8 @@ export function Footer() {
                   </li>
                 ))
                 }
-             */} </ul>
+             */}{" "}
+              </ul>
             </nav>
           </div>
           <div className="flex items-center space-x-4">

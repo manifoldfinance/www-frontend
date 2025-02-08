@@ -49,8 +49,8 @@ const products: { title: string; href: string; description: string }[] = [
   },
   {
     title: "SecureRPC",
-    href: "/products/securerpc",
-    description: "Enterprise-grade RPC service for secure blockchain interactions.",
+    href: "https://securerpc.com",
+    description: "",
   },
   {
     title: "XGA",

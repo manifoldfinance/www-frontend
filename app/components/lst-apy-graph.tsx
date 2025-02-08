@@ -18,7 +18,7 @@ interface LSTData {
 const lstData: LSTData[] = [
   { name: "mevETH", apy: 4.6 },
   { name: "stETH", apy: 2.8 },
-  { name: "rETH", apy: 2.9},
+  { name: "rETH", apy: 2.9 },
   { name: "oETH", apy: 2.85 },
 ]
 
