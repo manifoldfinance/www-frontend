@@ -10,6 +10,21 @@
     "check": "ANALYZE=true npx tsc --strict --noEmit",
     "profile": "ANALYZE=true npx next build --profile"
   },
+  "browserslist": {
+    "production": [
+      "> 0.2% and not dead",
+      "iOS >= 14",
+      "not IE > 0",
+      "not op_mini all",
+      "last 4 versions",
+      "not and_uc 12.12",
+      "not samsung 4",
+      "not ios_saf 12.2-12.5"
+    ],
+    "development": [
+      "last 3 versions"
+    ]
+  },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@next/bundle-analyzer": "^15.1.6",
