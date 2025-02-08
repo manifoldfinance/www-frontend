@@ -7,13 +7,12 @@ import { DocsNavigation } from "@/app/components/docs-navigation"
 import type React from "react"
 
 const docsPages = [
-  { title: "Introduction", href: "/docs/getting-started/introduction" },
-  { title: "Quick Start", href: "/docs/getting-started/quick-start" },
-  { title: "Staking Overview", href: "/docs/staking/overview" },
-  { title: "Validator Setup", href: "/docs/staking/validator-setup" },
-  { title: "Understanding MEV", href: "/docs/mev/understanding-mev" },
-  { title: "MEV Protection", href: "/docs/mev/mev-protection" },
-  { title: "MEV Strategies", href: "/docs/mev/mev-strategies" },
+//  { title: "Introduction", href: "/docs/getting-started/introduction" },
+ // { title: "Quick Start", href: "/docs/getting-started/quick-start" },
+  { title: "Liquid Staking", href: "https://docs.mev.io" },
+  { title: "SecureRPC Setup", href: "https://securerpc.com/docs" },
+  { title: "MEV Protection", href: "https://securerpc.com/docs"},
+  { title: "MEV Strategies (coming soon)", href: "#" },
   { title: "FAQ", href: "/docs/faq" },
 ]
 
