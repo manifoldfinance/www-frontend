@@ -1,10 +1,10 @@
 {
   "name": "manifoldfinance-dot-com",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "NODE_ENV=production next build",
     "start": "next start",
     "lint": "next lint",
     "check": "ANALYZE=true npx tsc --strict --noEmit",
@@ -69,6 +69,7 @@
     "date-fns": "4.1.0",
     "embla-carousel-react": "8.5.1",
     "framer-motion": "latest",
+    "knip": "^5.43.6",
     "lucide-react": "^0.454.0",
     "next": "14.2.23",
     "next-sitemap": "^4.2.3",
@@ -93,5 +94,11 @@
     "postcss": "^8.5.1",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3"
+  },
+  "nextBundleAnalysis": {
+    "budget": 358400,
+    "budgetPercentIncreaseRed": 20,
+    "minimumChangeThreshold": 1,
+    "showDetails": true
   }
 }
