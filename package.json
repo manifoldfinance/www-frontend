@@ -16,7 +16,7 @@
       "iOS >= 14",
       "not IE > 0",
       "not op_mini all",
-      "last 4 versions",
+      "last 2 Chrome versions",
       "not and_uc 12.12",
       "not samsung 4",
       "not ios_saf 12.2-12.5"

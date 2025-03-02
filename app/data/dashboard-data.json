@@ -1,0 +1,50 @@
+{
+  "eligibleAddresses": [
+    {
+      "address": "0x1234567890123456789012345678901234567890",
+      "stakedAmount": "1.00 ETH",
+      "totalEarned": "0.04 ETH",
+      "realAPY": "4.8%"
+    },
+    {
+      "address": "0xabcdefabcdefabcdefabcdefabcdefabcdefabcd",
+      "stakedAmount": "1.00 ETH",
+      "totalEarned": "0.04 ETH",
+      "realAPY": "5.2%"
+    },
+    {
+      "address": "0x9876543210987654321098765432109876543210",
+      "stakedAmount": "1.00 ETH",
+      "totalEarned": "0.04 ETH",
+      "realAPY": "5.1%"
+    },
+    {
+      "address": "0x2468135790246813579024681357902468135790",
+      "stakedAmount": "1.00 ETH",
+      "totalEarned": "0.04 ETH",
+      "realAPY": "5.3%"
+    },
+    {
+      "address": "0xfedcba9876fedcba9876fedcba9876fedcba9876",
+      "stakedAmount": "1.00 ETH",
+      "totalEarned": "0.04 ETH",
+      "realAPY": "5.4%"
+    }
+  ],
+  "stakingOverview": {
+    "totalRewardsUSD": "2,490,640.00",
+    "currentAPR": "5.2",
+    "earnedAirdropUSD": "124,532.00",
+    "rewardRate": "0.14"
+  },
+  "previousPayouts": [
+    { "date": "2025-03-01", "amount": "0.04 ETH" },
+    { "date": "2025-02-01", "amount": "0.01 ETH" },
+    { "date": "2025-01-01", "amount": "0.0 ETH" }
+  ],
+  "upcomingPayouts": [
+    { "date": "2025-04-01", "estimatedAmount": "1.4 ETH" },
+    { "date": "2025-05-01", "estimatedAmount": "1.1 ETH" }
+  ]
+}
+
